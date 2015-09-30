@@ -1,0 +1,95 @@
+body {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: #00f;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  font-size: 0;
+  background: #ff0;
+  width: 960px;
+  margin: 0 auto 0 auto;
+}
+
+.header {
+  background: #000;
+  color: #fff;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.content {
+  margin-top: 100px;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header ul li {
+  display: inline-block;
+}
+
+.header a:link { color: white; }
+.header a:visited { color: white; }
+.header a:hover { color: pink; }
+.header a:active { color: green; }
+
+a:link { color: black; }
+a:visited { color: black; }
+a:hover { color: pink; }
+a:active { color: green; }
+
+.footer {
+  font-size: 50px;
+  backgorund: #ccc;
+}
+
+.grid {
+  vertical-align: top;
+  font-size: 14px;
+  margin: 0 15px 30px 15px;
+  display: inline-block;
+}
+
+.c1 { width: 130px; }
+.c2 { width: 290px; }
+.c3 { width: 450px; }
+.c4 { width: 610px; }
+.c5 { width: 730px; }
+.c6 { width: 930px; }
+
+/*.bloop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  z-index: 0;
+}*/
+
+.content {
+  position: relative;
+}
