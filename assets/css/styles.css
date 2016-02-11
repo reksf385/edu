@@ -1,3 +1,5 @@
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   padding: 0;
@@ -28,9 +30,19 @@ ul { margin: 0; }
   display: inline-block;
 }
 
-.c6 { width: 930px; color: #000; }
+.parent { font-size: 0; }
+
+.no-gutters {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.no-left-gutter { margin-left: 0; }
+.no-right-gutter { margin-right: 0; }
+
+.c6 { width: 930px; }
 .c5 { width: 770px; }
 .c4 { width: 610px; }
 .c3 { width: 450px; }
-.c2 { width: 290px; }
+.c2 { width: 290px; background: #f00; }
 .c1 { width: 130px; }
