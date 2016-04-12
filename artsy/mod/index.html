@@ -26,11 +26,13 @@
                           'img/9.jpg',
                           'img/10.jpg',
                           'img/11.jpg',
-                          'img/12.jpg'
+                          'img/12.jpg',
+                          'img/13.jpg'
                          ];
 
       $('.page').click(function() {
-        current_page = current_page == 11 ? 0 : current_page += 1;
+        current_page = current_page == pages.length - 1 ? 0 : current_page += 1;
+        console.log(current_page);
         $(this).attr('src', pages[current_page]);
       });
     </script>
