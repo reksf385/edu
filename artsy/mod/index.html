@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html, body { margin: 0; padding: 0; }
+      .content { width: 1425px; margin: 0 auto; }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="content">
+      <img class="page" src="img/1.jpg" />
+    </div>
+
+    <script>
+      var current_page = 0,
+          pages        = ['img/1.jpg',
+                          'img/2.jpg',
+                          'img/3.jpg',
+                          'img/4.jpg',
+                          'img/5.jpg',
+                          'img/6.jpg',
+                          'img/7.jpg',
+                          'img/8.jpg',
+                          'img/9.jpg',
+                          'img/10.jpg',
+                          'img/11.jpg',
+                          'img/12.jpg'
+                         ];
+
+      $('.page').click(function() {
+        current_page = current_page == 11 ? 0 : current_page += 1;
+        $(this).attr('src', pages[current_page]);
+      });
+    </script>
+
+  </body>
+
+</html>
