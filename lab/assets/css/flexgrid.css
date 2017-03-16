@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 
+div { vertical-align: top; }
+
 body {
   margin: 0;
   padding: 0;
