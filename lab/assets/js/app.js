@@ -15,7 +15,6 @@ function charge_card(amount, item) {
   }
 }
 
-
 $('.item').click(function() {
   var amount = $(this).data('amount');
   var item   = $(this).data('item');
