@@ -6,6 +6,8 @@ body {
   font-size: 0;
 }
 
+body.home { background: url('../img/home-bg.jpg') repeat-x; }
+
 .header {
   position: fixed;
   top: 0;
