@@ -50,6 +50,7 @@ li { display: inline-block; }
 .blue { background: #4a90e2; }
 .red { background: #d0021b; }
 .sol-lewitt { background: url('../img/sol-lewitt.gif'); }
+.about { background: #ffa; }
 
 .slay {
   width: 100%;
@@ -81,6 +82,11 @@ li { display: inline-block; }
 }
 
 .hide { display: none; }
+
+.about-text {
+  font-size: 20px;
+  line-height: 24px;
+}
 
 
 
