@@ -17,7 +17,11 @@ body.home { background: url('../img/home-bg.jpg') repeat-x; }
   border-bottom: 1px solid #e5e5e5;
   padding: 15px;
   background: #fff;
+  z-index: 50;
 }
+
+.consign-prompt { position: absolute; right: 46px; top: 27px; }
+.consign-prompt, .consign-prompt a { font-size: 13px; color: #666; }
 
 
 .nav-wrapper {
@@ -46,7 +50,7 @@ li {
 .search-wrapper {
   position: relative;
   display: inline-block;
-  width: calc(100% - 641px);
+  width: calc(100% - 601px);
 }
 
 .search-field {
@@ -141,17 +145,18 @@ li {
   width: 1216px;
   background-repeat: no-repeat;
   background-position: center 100px;
+  position: relative;
 }
 
 .content.home { background-image: url(../img/home.jpg); height: 4384px; background-position: center top; margin-top: 70px; }
 
-.content.collect.all-works { background-image: url(../img/all-works.jpg); height: 8490px; }
+.content.collect.all-works { background-image: url(../img/all-works.jpg); height: 3458px; }
 .content.collect.auctions { background-image: url(../img/auctions.jpg); height: 4778px; }
-.content.collect.galleries { background-image: url(../img/galleries.jpg); height: 14031px; }
 .content.collect.artists { background-image: url(../img/artists.jpg); height: 4561px; }
 
 .content.visit.shows { background-image: url(../img/shows.jpg); height: 4154px; }
 .content.visit.fairs { background-image: url(../img/fairs.jpg); height: 4531px; }
+.content.visit.galleries { background-image: url(../img/galleries.jpg); height: 14031px; }
 .content.visit.museums { background-image: url(../img/museums.jpg); height: 6431px; }
 
 .content.read { background-image: url(../img/read.jpg); height: 7719px; background-position: center top; }
