@@ -1,6 +1,7 @@
 var pw = prompt("Password");
 
 if (pw !== 'elephant') {
+  $('html').html('');
   window.location.href = "http://briansw.github.io/artsy/nav";
 }
 
