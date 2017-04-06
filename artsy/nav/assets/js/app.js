@@ -1,3 +1,10 @@
+var pw = prompt("Password");
+
+if (pw !== 'elephant') {
+  window.location.href = "http://briansw.github.io/artsy/nav";
+}
+
+
 $('.logo').click(function() {
   $('.content').attr('class', 'content home');
   $('.nav-item').removeClass('active');
