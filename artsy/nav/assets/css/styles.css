@@ -148,6 +148,8 @@ li {
   position: relative;
 }
 
+.content.google { background-image: url(../img/google.jpg); height: 2079px; background-position: center top; margin-top: 0; }
+.content.artist { background-image: url(../img/artist.jpg); height: 9434px; background-position: center top; margin-top: 70px; }
 .content.home { background-image: url(../img/home.jpg); height: 4384px; background-position: center top; margin-top: 70px; }
 
 .content.collect.all-works { background-image: url(../img/all-works.jpg); height: 3458px; }
