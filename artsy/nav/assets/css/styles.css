@@ -162,3 +162,17 @@ li {
 .content.visit.museums { background-image: url(../img/museums.jpg); height: 6431px; }
 
 .content.read { background-image: url(../img/read.jpg); height: 7719px; background-position: center top; }
+
+.signup-wrapper { display: none; }
+
+.content.artist .signup-wrapper {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  border-top: 2px solid #6E1FFF;
+  padding: 19px 0;
+  background: #fff;
+}
