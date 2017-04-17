@@ -25,7 +25,7 @@ ol, ul { list-style: none; margin: 0; padding: 0; }
 
 .sorted-container li:last-child { border: none; }
 
-.draggable:after {
+/*.draggable:after {
   content: '';
   display: block;
   width: 10px;
@@ -43,7 +43,7 @@ ol, ul { list-style: none; margin: 0; padding: 0; }
 
 .cf { color: red; }
 .mw { color: green; }
-.buy { color: blue; }
+.buy { color: blue; }*/
 
 .container {
   width: 390px;
