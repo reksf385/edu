@@ -1,0 +1,87 @@
+<html>
+  <head>
+
+    <style>
+      * { box-sizing: border-box; }
+
+      body {
+        font-size: 0;
+        margin: 20px;
+        padding: 0;
+      }
+
+      .sale-card {
+        width: 210px;
+        height: 265px;
+        background: #f8f8f8;
+        padding: 15px;
+        display: inline-block;
+        margin: 0 20px 20px 0;
+      }
+
+      .sale-card img { width: 100%; }
+
+      .timer {
+        margin-top: 8px;
+        text-transform: uppercase;
+        font-family: arial, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        letter-spacing: 1px;
+      }
+
+      .sale-name {
+        height: 90px;
+        font-size: 17px;
+        line-height: 1.3em;
+      }
+
+      h2 {
+        font-size: 17px;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Required */
+      img.colorify:not(.visible) {
+        opacity: 0;
+        filter: blur(3px);
+      }
+
+      img.colorify:not(.all-loaded).all-not-loaded {
+        image-rendering: -moz-crisp-edges;
+        image-rendering: -o-crisp-edges;
+        image-rendering: -webkit-optimize-contrast;
+        -ms-interpolation-mode: nearest-neighbor;
+        image-rendering: pixelated;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="sale-card" colorfy-sale-card>
+      <div class="sale-name">
+        <h2>Christie’s</h2>
+        Prints &amp; Multiples
+      </div>
+      <img class="colorfy" colorfy src="1.jpg" />
+      <div class="timer">
+        Ends in 59 minutes
+      </div>
+    </div>
+
+    <div class="sale-card">
+      <div class="sale-name">
+        <h2>Christie’s</h2>
+        Prints &amp; Multiples
+      </div>
+      <img class="colorfy" colorfy src="2.jpg" />
+      <div class="timer">
+        Ends in 59 minutes
+      </div>
+    </div>
+    <script src="colorfy.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
