@@ -1,0 +1,58 @@
+* { box-sizing: border-box; }
+
+body {
+  font-size: 0;
+  margin: 20px;
+  padding: 0;
+}
+
+.sale-card {
+  width: 210px;
+  height: 265px;
+  background: #f8f8f8;
+  padding: 15px;
+  display: inline-block;
+  margin: 0 20px 20px 0;
+  position: relative;
+  color: #fff;
+}
+
+.sale-card img { width: 100%; }
+
+.timer {
+  text-transform: uppercase;
+  font-family: arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: #fff;
+}
+
+.sale-name {
+  height: 90px;
+  font-size: 17px;
+  line-height: 1.3em;
+}
+
+h2 {
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Required */
+img.colorify:not(.visible) {
+  opacity: 0;
+  filter: blur(3px);
+}
+
+img.colorify:not(.all-loaded).all-not-loaded {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: pixelated;
+}
