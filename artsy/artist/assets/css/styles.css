@@ -122,7 +122,7 @@ li {
 }
 
 .header-button.about {
-  top: 40px;
+  top: 60px;
   width: 307px;
   height: 99px;
 }
@@ -142,7 +142,7 @@ li {
 .content.articles { background-image: url(../img/articles.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
 .content.related-artists { background-image: url(../img/related-artists.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
 
-.spacer { height: 229px; }
+.spacer { height: 268px; }
 
 .sidebar-wrapper {
   margin: 0 auto;
