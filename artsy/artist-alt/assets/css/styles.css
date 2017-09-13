@@ -1,0 +1,201 @@
+* { box-sizing: border-box; vertical-align: top; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+
+body.home { background: url('../img/home-bg.jpg') repeat-x; }
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 15px;
+  background: #fff;
+  z-index: 50;
+}
+
+.consign-prompt { position: absolute; right: 46px; top: 27px; }
+.consign-prompt, .consign-prompt a { font-size: 13px; color: #666; }
+
+
+.nav-wrapper {
+  text-align: center;
+  margin: 11px 0 0 20px;
+}
+
+ul, li {
+  list-style: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+  margin: 0 10px;
+}
+
+.logo { margin-right: 15px; cursor: pointer; }
+
+.search-wrapper {
+  position: relative;
+  display: inline-block;
+  width: calc(100% - 820px);
+}
+
+.search-field {
+  border: 2px solid #e5e5e5;
+  background: #f8f8f8;
+  font-family: 'Adobe Garamond Pro', 'Adobe Garamond', Garamond, 'Times New Roman', times, serif;
+  font-size: 18px;
+  padding: 7px;
+  position: relative;
+  width: 100%;
+  padding-left: 36px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 9px;
+  left: 11px;
+  z-index: 5;
+}
+
+.search-field:focus {
+  outline: none;
+  border-color: #6E1FFF;
+}
+
+.buttons {
+  position: absolute;
+  top: 27px;
+  right: 15px;
+}
+
+.button {
+  background: #000;
+  padding: 11px 20px;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.ghost {
+  border: 1px solid #e5e5e5;
+  color: #000;
+  background: transparent;
+  margin-right: 15px;
+}
+
+.nav-item { cursor: pointer; }
+.nav-item.active, .nav-item:hover { color: #6E1FFF; }
+
+.header-button {
+  width: 230px;
+  height: 100px;
+  position: absolute;
+  top: 28px;
+  right: 46px;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-transition: background 200ms ease;
+     -moz-transition: background 200ms ease;
+       -o-transition: background 200ms ease;
+          transition: background 200ms ease;
+}
+
+.header-button:hover {
+  background: rgba(0,0,0,.03);
+}
+
+.content {
+  margin: 100px auto 0 auto;
+  width: 1216px;
+  background-repeat: no-repeat;
+  background-position: center 100px;
+  position: relative;
+}
+
+.content.artist { background-image: url(../img/artist.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
+.content.about { background-image: url(../img/about.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
+.content.auction-results { background-image: url(../img/auction-results.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
+.content.shows { background-image: url(../img/shows.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
+.content.articles { background-image: url(../img/articles.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
+.content.related-artists { background-image: url(../img/related-artists.jpg); height: 2350px; background-position: center top; margin-top: 70px; }
+
+.spacer { height: 209px; }
+
+.sidebar-wrapper {
+  margin: 0 auto;
+  width: 1216px;
+}
+
+.sidebar {
+  width: 200px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  padding: 20px;
+  margin-left: 45px;
+}
+
+.sticky-wrapper { height: 0 !important; }
+
+.sidebar.stuck {
+  position: fixed;
+  top: 100px;
+}
+
+.sidebar.hide { display: none; }
+
+.sidebar-button {
+  width: 100%;
+  padding: 0 0 15px 0;
+  font-size: 15px;
+  line-height: 1;
+  color: #666;
+  margin: 0;
+  letter-spacing: normal;
+}
+
+.sidebar-button:hover {
+  color: #000;
+}
+
+.sidebar-button.active {
+  color: #6E00FF;
+}
+
+.sidebar-button.active::before {
+  content: '● ';
+  position: relative;
+  top: -2px;
+}
+
+.back-arrow {
+  font-size: 9px;
+  position: relative;
+  top: 4px;
+}
+
+.sidebar-button.artworks {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 20px;
+  padding-bottom: 0;
+  margin-top: 7px;
+}
+
+.sidebar-button:hover { cursor: pointer; }

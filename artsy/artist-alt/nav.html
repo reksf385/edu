@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Artsy</title>
+    <meta charset="UTF-8">
+    <link href="assets/css/styles.css" media="all" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <script src="assets/js/sticky.min.js"></script>
+  </head>
+
+  <body class="artist">
+    <div class="header">
+      <img class="logo" src="assets/img/logo.svg" />
+      <div class="search-wrapper">
+        <img class="search-icon" src="assets/img/search.svg" />
+        <input class="search-field" type="text" />
+      </div>
+
+      <ul class="nav-wrapper">
+        <li data-classes="content collect all-works" class="nav-item collect">ARTWORKS</li>
+        <li data-classes="content visit shows" class="nav-item visit">AUCTIONS</li>
+        <li data-classes="content read" class="nav-item read">GALLERIES</li>
+        <li data-classes="content read" class="nav-item read">FAIRS</li>
+        <li data-classes="content read" class="nav-item read">MAGAZINE</li>
+        <li data-classes="content read" class="nav-item read">MORE</li>
+      </ul>
+
+      <div class="buttons">
+        <a class="button ghost" href="#">LOG IN</a>
+        <a class="button" href="#">SIGN UP</a>
+      </div>
+
+    </div>
+
+    <div class="content artist">
+      <div class="header-button"></div>
+      <div class="spacer"></div>
+      <div class="sidebar-wrapper">
+        <div class="sidebar hide">
+          <li class="sidebar-button about active">Biography/CV</li>
+          <li class="sidebar-button auction-results">Auction results</li>
+          <li class="sidebar-button shows">Shows</li>
+          <li class="sidebar-button articles">Articles</li>
+          <li class="sidebar-button related-artists">Related Artists</li>
+          <li class="sidebar-button artworks"><span class="back-arrow">◀</span> Back to artworks</li>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
