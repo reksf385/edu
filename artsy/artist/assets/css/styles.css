@@ -6,7 +6,9 @@ body {
   font-size: 0;
 }
 
+.content.google { background-image: url(../img/google.jpg); height: 2079px; background-position: center top; margin-top: 0; }
 body.home { background: url('../img/home-bg.jpg') repeat-x; }
+
 
 .header {
   position: fixed;
