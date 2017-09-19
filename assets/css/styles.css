@@ -7,14 +7,23 @@ body {
   padding: 50px;
 }
 
+.about {
+  background: #000;
+  color: #fff;
+}
+
+a {
+  color: #000;
+}
+
+.about a {
+  color: #fff;
+}
+
 h1, h2 {
   font-size: 20px;
   margin: 0;
   font-weight: normal;
-}
-
-a {
-  color: #000000;
 }
 
 div {
@@ -27,6 +36,10 @@ img {
 
 ul {
   margin: 0;
+}
+
+p {
+  width: 710px;
 }
 
 
