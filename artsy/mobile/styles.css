@@ -3,6 +3,32 @@ html, body {
   padding: 0;
 }
 
+.landing .slider-wrapper { display: none; }
+
+.slider-wrapper {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  height: 49px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.a .slider-wrapper .slider {
+  width: 666px;
+  height: 100%;
+  background-size: 666px 49px;
+  background-image: url('a-slider.jpg');
+}
+
+.b .slider-wrapper .slider {
+  width: 573px;
+  height: 100%;
+  background-size: 573px 49px;
+  background-image: url('b-slider.jpg');
+}
+
 .switcher {
   width: 60px;
   height: 60px;
