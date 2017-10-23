@@ -1,0 +1,33 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 320px;
+  margin: 0 auto;
+  height: 2000px;
+  background: url('4.jpg');
+  background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 1192px) and (max-width: 100000px) {
+  .wrapper {
+    background: url('1.jpg');
+    width: 1192px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1191px) {
+  .wrapper {
+    background: url('2.jpg');
+    width: 1024px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .wrapper {
+    background: url('3.jpg');
+    width: 768px;
+  }
+}
