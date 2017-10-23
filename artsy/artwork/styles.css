@@ -17,6 +17,7 @@ html, body {
   margin: 0 auto;
   background-repeat: no-repeat;
   height: 1173px;
+  position: relative;
 }
 
 .a { background-image: url('a.jpg'); }
