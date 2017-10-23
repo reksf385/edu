@@ -6,7 +6,7 @@ html, body {
 .switcher {
   width: 60px;
   height: 60px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   cursor: pointer;
