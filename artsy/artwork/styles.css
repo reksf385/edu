@@ -32,7 +32,7 @@ html, body {
 }
 
 .a .tooltip { left: 555px; }
-.b .tooltip { left: 586px; }
+.b .tooltip { left: 606px; }
 .c .tooltip { left: 587px; top: 816px; }
 
 .tooltip-message {
