@@ -3,18 +3,10 @@
 body {
   margin: 0;
   padding: 30px;
-  font-size: 0;
+  font-size: 50px;
 }
 
-.wrapper {
-  width: 100%;
-}
-
-ul, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+h2 { font-size: 50px; font-weight: normal; }
 
 .nav-item {
   font-size: 20px;
@@ -29,42 +21,3 @@ ul, li {
   background: #000;
   color: #fff;
 }
-
-.logo {
-  height: 165px;
-  position: relative;
-  display: inline-block;
-  margin: 0 30px 30px 0;
-}
-
-.logo img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.apple.logo { width: 150px; }
-.nike.logo { width: 320px; }
-.disney.logo { width: 381px; }
-.vogue.logo { width: 330px; }
-
-.apple.logo img { height: 150px; }
-.nike.logo img { height: 115px; }
-.disney.logo img { height: 165px; }
-.vogue.logo img { height: 110px; }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
