@@ -5,6 +5,8 @@ $('.switcher').click(function() {
     context = 'b';
   } else if (context == 'b') {
     context = 'c';
+  } else if (context == 'c') {
+    context = 'd';
   } else {
     context = 'a';
   }

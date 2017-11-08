@@ -23,6 +23,7 @@ html, body {
 .a { background-image: url('a.jpg'); }
 .b { background-image: url('b.jpg'); }
 .c { background-image: url('c.jpg'); }
+.d { background-image: url('d.jpg'); }
 
 .tooltip {
   top: 944px;
@@ -31,7 +32,8 @@ html, body {
   position: absolute;
 }
 
-.a .tooltip { left: 555px; }
+.a .tooltip,
+.d .tooltip { left: 555px; }
 .b .tooltip { left: 606px; }
 .c .tooltip { left: 587px; top: 816px; }
 
@@ -48,6 +50,7 @@ html, body {
   display: block;
 }
 
-.a .tooltip-message { background-image: url('tooltip-a.jpg'); }
+.a .tooltip-message,
+.d .tooltip-message { background-image: url('tooltip-a.jpg'); }
 .b .tooltip-message { background-image: url('tooltip-b.jpg'); }
 .c .tooltip-message { background-image: url('tooltip-c.jpg'); }
