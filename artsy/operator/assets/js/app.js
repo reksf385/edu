@@ -5,7 +5,7 @@ var Bid = {
       temp_ask:     '',
       sell_value:   1000,
       sell_string:  '1,000',
-      increment:    100,
+      increment:    1000,
       online: 5
     };
 
