@@ -21,6 +21,10 @@ $(document).keyup(function(event) {
     bid('online');
   } else if (event.keyCode == 70) {
     bid('Floor');
+  } else if (event.keyCode == 87) {
+    message('Fair warning', 'yellow');
+  } else if (event.keyCode == 76) {
+    message('Last call', 'red');
   } else if (event.keyCode == 48) {
     update_current_ask(0);
   } else if (event.keyCode == 49) {
@@ -90,9 +94,12 @@ function increment_sell_at() {
 }
 
 function add_to_history(source) {
-  if (source == 'online') {
-    source = '#' + Math.floor(Math.random() * 1000000);
-  }
+  source = source == 'online' ? '#' + Math.floor(Math.random() * 1000000) : source;
   var line_item = '<div class="line-item"><span class="description">' + source + '</span><span class="value">' + Bid.sell_string + '</span></div>'
+  $('.history').prepend(line_item);
+}
+
+function message(message, class_name) {
+  var line_item = '<div class="line-item"><span class="description ' + class_name + '">' + message + '</span></div>'
   $('.history').prepend(line_item);
 }

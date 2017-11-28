@@ -96,5 +96,8 @@ body {
 .floor { background: #0FDB83; border-color: transparent; }
 .online { background: #622EEC; border-color: transparent; }
 .warning { background: #F1CD39; border-color: transparent; }
-.final-call { background: #F4895C; border-color: transparent; }
+.last-call { background: #F4895C; border-color: transparent; }
 .sell-at { background: #000; border-color: transparent; }
+
+.yellow { color: #F1CD39; }
+.red { color: #F4895C; }
