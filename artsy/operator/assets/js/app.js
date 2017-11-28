@@ -79,12 +79,14 @@ function reset_current_ask() {
 }
 
 function set_current_ask() {
-  Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ''));
-  Bid.ask_string = Bid.temp_ask;
-  Bid.temp_ask = '';
+  if (Bid.temp_ask !== '') {
+    Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ''));
+    Bid.ask_string = Bid.temp_ask;
+    Bid.temp_ask = '';
 
-  $('.wide-button.current-ask').removeClass('typing');
-  typing = false;
+    $('.wide-button.current-ask').removeClass('typing');
+    typing = false;
+  }
 }
 
 function bid(source) {
