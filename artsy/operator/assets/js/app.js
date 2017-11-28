@@ -5,7 +5,8 @@ var Bid = {
       temp_ask:     '',
       sell_value:   1000,
       sell_string:  '1,000',
-      increment:    100
+      increment:    100,
+      online: 5
     };
 
 reset_current_ask();
@@ -104,6 +105,7 @@ function bid(source) {
   increment_sell_at();
   increment_current_ask();
   add_to_history(source);
+  decrement_max_bids();
 }
 
 function increment_current_ask() {
@@ -132,4 +134,18 @@ function message(message, class_name) {
 function active_state(class_name) {
   $(class_name).addClass('active');
   setTimeout(function() { $(class_name).removeClass('active') }, 50);
+}
+
+function decrement_max_bids() {
+  var class_name;
+
+  Bid.online -=1;
+  if (Bid.online >= 3) {
+    class_name = 'q3';
+  } else if (Bid.online == 2) {
+    class_name = 'q2';
+  }
+
+  $('.online').attr('class', 'square-button online ');
+  $('.online').addClass(class_name);
 }
