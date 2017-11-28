@@ -10,6 +10,14 @@ var Bid = {
 
 reset_current_ask();
 
+$('.square-button, .wide-button').click(function(event) {
+    var event    = $.Event('keyup'),
+        key_code = $(this).data('keycode');
+
+    event.keyCode = key_code;
+    $(document).trigger(event);
+});
+
 $(document).keyup(function(event) {
   event.preventDefault();
   console.log(event.keyCode);
@@ -19,12 +27,16 @@ $(document).keyup(function(event) {
     set_current_ask();
   } else if (event.keyCode == 79) {
     bid('online');
+    active_state('.online');
   } else if (event.keyCode == 70) {
     bid('Floor');
+    active_state('.floor');
   } else if (event.keyCode == 87) {
     message('Fair warning', 'yellow');
+    active_state('.warning');
   } else if (event.keyCode == 76) {
     message('Last call', 'red');
+    active_state('.last-call');
   } else if (event.keyCode == 48) {
     update_current_ask(0);
   } else if (event.keyCode == 49) {
@@ -102,4 +114,9 @@ function add_to_history(source) {
 function message(message, class_name) {
   var line_item = '<div class="line-item"><span class="description ' + class_name + '">' + message + '</span></div>'
   $('.history').prepend(line_item);
+}
+
+function active_state(class_name) {
+  $(class_name).addClass('active');
+  setTimeout(function() { $(class_name).removeClass('active') }, 50);
 }

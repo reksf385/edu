@@ -51,6 +51,8 @@ body {
   cursor: pointer;
 }
 
+.wide-button.active, .square-button.active { background: #000; }
+
 .with-gutter { margin-right: 30px; }
 
 .square-description {
