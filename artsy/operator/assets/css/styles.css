@@ -86,7 +86,7 @@ body {
 }
 
 .typing { border-color: #622EEC; }
-.typing .button-value { color: #622EEC; }
+.typing span { color: #622EEC; }
 
 .value {
   position: absolute;

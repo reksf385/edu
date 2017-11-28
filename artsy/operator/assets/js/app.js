@@ -37,6 +37,8 @@ $(document).keyup(function(event) {
   } else if (event.keyCode == 76) {
     message('Last call', 'red');
     active_state('.last-call');
+  } else if (event.keyCode == 8) {
+    del_char();
   } else if (event.keyCode == 48) {
     update_current_ask(0);
   } else if (event.keyCode == 49) {
@@ -59,6 +61,15 @@ $(document).keyup(function(event) {
     update_current_ask(9);
   }
 });
+
+function del_char() {
+  var $current_ask = $('.current-ask .button-value');
+  Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
+  Bid.temp_ask = Bid.temp_ask.slice(0,-1);
+  Bid.temp_ask = Math.abs(Bid.temp_ask);
+  Bid.temp_ask = Bid.temp_ask.toLocaleString();
+  $current_ask.html(Bid.temp_ask);
+}
 
 function update_current_ask(value) {
   var $current_ask = $('.current-ask .button-value');
