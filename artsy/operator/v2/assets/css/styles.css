@@ -24,7 +24,8 @@ body {
   margin: 0;
   padding: 0;
   font-size: 0;
-  font-family: 'Unica77LLSubMedium', Helvetica, arial, sans-serif;
+  font-family: 'Unica77LLSubRegular', Helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
   background: #e5e5e5;
 }
 
@@ -59,14 +60,13 @@ body {
 }
 
 .wide-button {
-  border: 2px solid;
+  border: 2px solid #e5e5e5;
   font-size: 30px;
   padding: 25px 20px;
   text-align: center;
   margin: 0 0 30px 0;
   position: relative;
   height: 90px;
-  color: #fff;
   cursor: pointer;
 }
 
@@ -132,7 +132,6 @@ body {
   left: 50%;
   transform: translate(-50%,-50%);
   font-size: 50px;
-  font-family: 'Unica77LLSubRegular';
 }
 
 .square-description {
@@ -151,7 +150,7 @@ body {
   font-size: 12px;
 }
 
-.current-ask.button-value {
+.current-ask .button-value {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -177,13 +176,18 @@ body {
   top: 0;
 }
 
-.current-ask { color: #000; }
 .floor { background: #0FDB83; border-color: transparent; }
 .online { background: #622EEC; border-color: transparent; }
 .warning { background: #F1CD39; border-color: transparent; }
 .last-call { background: #F4895C; border-color: transparent; }
-.sell-at { background: #000; border-color: transparent; }
 .sell { background: #000; border-color: transparent; }
 
 .yellow { color: #F1CD39; }
 .red { color: #F4895C; }
+
+.disabled.online,
+.disabled.online-bidder {
+  border: 2px solid #e5e5e5;
+  background: #fff;
+  color: #ccc;
+}

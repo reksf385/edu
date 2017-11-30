@@ -5,11 +5,12 @@ var Bid = {
       temp_ask:     '',
       sell_value:   1000,
       sell_string:  '1,000',
-      increment:    1000,
+      increment:    500,
       online: 5
     };
 
 reset_current_ask();
+set_increment();
 
 $('.square-button, .wide-button').click(function(event) {
     var event    = $.Event('keyup'),
@@ -102,10 +103,15 @@ function set_current_ask() {
 }
 
 function bid(source) {
-  increment_sell_at();
-  increment_current_ask();
-  add_to_history(source);
-  decrement_max_bids();
+  var submittable_bid = source == 'online' && $('.online').hasClass('disabled') ? false : true;
+
+  if (submittable_bid) {
+    increment_sell_at();
+    increment_current_ask();
+    add_to_history(source);
+    decrement_max_bids();
+    check_for_online_bidders();
+  }
 }
 
 function increment_current_ask() {
@@ -118,7 +124,6 @@ function increment_sell_at() {
   Bid.sell_value  = Bid.ask_value;
   Bid.sell_string = Bid.ask_string;
   $('.sell .button-value').html(Bid.sell_string);
-  $('.large .square-key').html(Bid.ask_string);
 }
 
 function add_to_history(source) {
@@ -137,6 +142,10 @@ function active_state(class_name) {
   setTimeout(function() { $(class_name).removeClass('active') }, 50);
 }
 
+function set_increment() {
+  $('.increment').html(Bid.increment);
+}
+
 function decrement_max_bids() {
   var class_name;
 
@@ -147,6 +156,19 @@ function decrement_max_bids() {
     class_name = 'q2';
   }
 
-  $('.large').attr('class', 'online-bidder-wrapper square-button large ');
+  $('.large').attr('class', 'online-bidder square-button large ');
   $('.large').addClass(class_name);
+}
+
+function check_for_online_bidders() {
+  if (Bid.online >= 1) {
+    $('.large .square-key').html(Bid.ask_string);
+  } else {
+    disable_online_bidding();
+  }
+}
+
+function disable_online_bidding() {
+  $('.large .square-key').html('&ndash;');
+  $('.square-button.online, .square-button.large.online-bidder').addClass('disabled');
 }
