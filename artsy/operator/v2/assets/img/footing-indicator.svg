@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="30px" viewBox="0 0 60 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="15" cy="15" r="15"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="tablet---768px-copy-13" transform="translate(-430.000000, -153.000000)">
+            <g id="Group-5" transform="translate(430.000000, 153.000000)">
+                <g id="Oval-2-Copy-2">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <circle stroke="#E5E5E5" stroke-width="2" cx="15" cy="15" r="14"></circle>
+                </g>
+                <g id="Group-5-Copy-4" transform="translate(30.000000, 0.000000)" fill="#622EEC">
+                    <circle id="Oval-2-Copy" cx="15" cy="15" r="15"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

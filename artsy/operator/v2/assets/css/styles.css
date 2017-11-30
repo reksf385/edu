@@ -158,6 +158,28 @@ body {
   text-align: right;
 }
 
+.footing {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #666;
+}
+
+.footing-indicator {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(../img/footing-indicator.svg);
+}
+
+.footing .footing-status::after { content: 'Off'; }
+.footing.on .footing-status::after { content: 'On'; }
+
+.on .footing-indicator {
+  background-position: -30px 0;
+}
 
 
 .line-item {
