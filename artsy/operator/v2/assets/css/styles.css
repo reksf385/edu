@@ -170,8 +170,8 @@ body {
 .line-item.highest-bid { color: #000; font-weight: bold; }
 .line-item.rejected span { color: #ccc; text-decoration: line-through; }
 
-.typing { border-color: #622EEC; }
-.typing span { color: #622EEC; }
+.typing { border-color: #6E1FFF; }
+.typing span { color: #6E1FFF; }
 
 .value {
   position: absolute;
@@ -179,14 +179,14 @@ body {
   top: 0;
 }
 
-.floor { background: #0FDB83; border-color: transparent; }
-.online { background: #622EEC; border-color: transparent; }
-.warning { background: #F1CD39; border-color: transparent; }
-.last-call { background: #F4895C; border-color: transparent; }
+.floor { background: #0EDA83; border-color: transparent; }
+.online { background: #6E1FFF; border-color: transparent; }
+.warning { background: #F1AF1B; border-color: transparent; }
+.last-call { background: #F7625A; border-color: transparent; }
 .sell { background: #000; border-color: transparent; }
 
-.yellow { color: #F1CD39; }
-.red { color: #F4895C; }
+.yellow { color: #F1AF1B; font-weight: bold; }
+.red { color: #F7625A; font-weight: bold; }
 
 .disabled.online,
 .disabled.online-bidder {

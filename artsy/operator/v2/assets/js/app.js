@@ -6,7 +6,7 @@ var Bid = {
       sell_value:   1000,
       sell_string:  '1,000',
       increment:    500,
-      online: 5
+      online:       4
     };
 
 reset_current_ask();
