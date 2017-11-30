@@ -127,9 +127,18 @@ function increment_sell_at() {
 }
 
 function add_to_history(source) {
-  source = source == 'online' ? '#' + Math.floor(Math.random() * 1000000) : source;
-  var line_item = '<div class="line-item"><span class="description">' + source + '</span><span class="value">' + Bid.sell_string + '</span></div>'
+  if (source == 'Floor' && Bid.online >= 1) {
+    var online_bidder_id = '#' + Math.floor(Math.random() * 1000000);
+    var line_item = '<div class="line-item"><span class="description">' + source + '</span><span class="value">' + Bid.sell_string + '</span></div>' +
+                    '<div class="line-item rejected"><span class="description">' + online_bidder_id + '</span><span class="value">' + Bid.sell_string + '</span></div>';
+  } else {
+    source = source == 'online' ? '#' + Math.floor(Math.random() * 1000000) : source;
+    var line_item = '<div class="line-item"><span class="description">' + source + '</span><span class="value">' + Bid.sell_string + '</span></div>';
+  }
+
   $('.history').prepend(line_item);
+  $('.line-item').removeClass('highest-bid');
+  $($('.line-item')[0]).addClass('highest-bid');
 }
 
 function message(message, class_name) {
