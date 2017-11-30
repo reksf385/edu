@@ -12,7 +12,7 @@ var Bid = {
 reset_current_ask();
 set_increment();
 
-$('.square-button, .wide-button').click(function(event) {
+$('.square-button').click(function(event) {
     var event    = $.Event('keyup'),
         key_code = $(this).data('keycode');
 
