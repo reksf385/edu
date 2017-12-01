@@ -6,7 +6,8 @@ var Bid = {
       sell_value:   1000,
       sell_string:  '1,000',
       increment:    500,
-      online:       4
+      online:       4,
+      footing:      false
     };
 
 reset_current_ask();
@@ -172,9 +173,14 @@ function decrement_max_bids() {
 function check_for_online_bidders() {
   if (Bid.online >= 1) {
     $('.large .square-key').html(Bid.ask_string);
+    set_footing();
   } else {
     disable_online_bidding();
   }
+}
+
+function set_footing() {
+  $('.footing').toggleClass('on');
 }
 
 function disable_online_bidding() {

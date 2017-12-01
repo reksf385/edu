@@ -174,12 +174,16 @@ body {
   background: url(../img/footing-indicator.svg);
 }
 
+.disabled .footing { display: none; }
 .footing .footing-status::after { content: 'Off'; }
 .footing.on .footing-status::after { content: 'On'; }
+.footing.on { color: #6E1FFF; }
 
 .on .footing-indicator {
   background-position: -30px 0;
 }
+
+.footing .description { position: relative; top: 8px; padding-right: 5px; }
 
 
 .line-item {
