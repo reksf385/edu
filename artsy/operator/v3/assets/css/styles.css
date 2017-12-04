@@ -149,12 +149,14 @@ body {
   right: 10px;
 }
 
-.on .footing-indicator {
+.footing-indicator {
   display: inline-block;
-  width: 34px;
-  height: 34px;
+  width: 40px;
+  height: 40px;
   background: url(../img/footing-indicator.svg);
 }
+
+.on .footing-indicator { display: none; }
 
 .disabled .footing { display: none; }
 
