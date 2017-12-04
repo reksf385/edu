@@ -64,7 +64,7 @@ body {
 }
 
 .activity h2 {
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
   font-weight: normal;
   margin: 0 0 20px 0;
@@ -159,7 +159,7 @@ body {
 .disabled .footing { display: none; }
 
 .line-item {
-  font-size: 12px;
+  font-size: 14px;
   color: #666;
   position: relative;
   margin: 0 0 20px 0;
