@@ -30,7 +30,7 @@ body {
 }
 
 .wrapper {
-  width: 900px;
+  width: 660px;
   height: 575px;
   margin: 30px auto;
   background: #fff;
@@ -46,21 +46,22 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 
-.control-panel, .activity {
+.control-panel, .activity-wrapper {
+  width: 330px;
   display: inline-block;
-}
-
-.control-panel {
-  width: 660px;
-  padding: 10px;
+  padding: 10px 0 10px 10px;
 }
 
 .activity {
-  width: 240px;
-  height: 100%;
+  width: 300px;
+  height: 300px;
   overflow: hidden;
   background: #f1f1f1;
   padding: 20px;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
+  position: relative;
+
 }
 
 .activity h2 {
@@ -73,7 +74,7 @@ body {
 .wide-button {
   border: 2px solid #000;
   font-size: 50px;
-  margin: 10px;
+  margin: 10px 0 20px 0;
   padding: 0 10px;
   text-align: center;
   position: relative;
@@ -183,8 +184,36 @@ body {
 .online { background: #6E1FFF; }
 .warning { background: #F1AF1B; }
 .last-call { background: #F7625A; }
-.sell { background: #000; }
 .undo { background: #ccc; }
+
+.sell-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 260px;
+  height: 60px;
+  background: #000;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.sell-button .description {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sell-button .button-value {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: bold;
+}
 
 .yellow { color: #F1AF1B; font-weight: bold; }
 .red { color: #F7625A; font-weight: bold; }
