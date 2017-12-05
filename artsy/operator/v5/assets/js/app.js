@@ -13,7 +13,7 @@ var Bid = {
       footing:          false
     };
 
-reset_current_ask();
+reset_current_number();
 set_increment();
 
 $('.square-button').click(function(event) {
@@ -28,7 +28,7 @@ $(document).keyup(function(event) {
   event.preventDefault();
   console.log(event.keyCode);
   if (event.keyCode == 27) {
-    reset_current_ask();
+    reset_current_number();
   } else if (event.keyCode == 13) {
     set_current_number();
   } else if (event.keyCode == 73) {
@@ -109,10 +109,17 @@ function update_number_field(value) {
   }
 }
 
-function reset_current_ask() {
-  Bid.temp_ask = '';
-  $('.current-ask .button-value').html(Bid.ask_string);
-  $('.wide-button.current-ask').removeClass('typing');
+function reset_current_number() {
+  if (Bid.increment_focus) {
+    Bid.temp_increment = '';
+    $('.current-increment .increment').html(Bid.increment_string);
+    $('.current-increment').removeClass('typing');
+    Bid.increment_focus = false;
+  } else {
+    Bid.temp_ask = '';
+    $('.current-ask .button-value').html(Bid.ask_string);
+    $('.current-ask').removeClass('typing');
+  }
   typing = false;
 }
 
