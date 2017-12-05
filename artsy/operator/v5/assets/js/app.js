@@ -1,13 +1,16 @@
 var typing = false;
 var Bid = {
-      ask_value:    1000,
-      ask_string:   '1,000',
-      temp_ask:     '',
-      sell_value:   1000,
-      sell_string:  '1,000',
-      increment:    500,
-      online:       4,
-      footing:      false
+      ask_value:        1000,
+      ask_string:       '1,000',
+      temp_ask:         '',
+      sell_value:       1000,
+      sell_string:      '1,000',
+      increment_focus: false,
+      increment_value:  500,
+      increment_string: '500',
+      temp_increment:   '',
+      online:           4,
+      footing:          false
     };
 
 reset_current_ask();
@@ -27,7 +30,9 @@ $(document).keyup(function(event) {
   if (event.keyCode == 27) {
     reset_current_ask();
   } else if (event.keyCode == 13) {
-    set_current_ask();
+    set_current_number();
+  } else if (event.keyCode == 73) {
+    focus_increment();
   } else if (event.keyCode == 79) {
     bid('online');
     active_state('.online');
@@ -43,46 +48,64 @@ $(document).keyup(function(event) {
   } else if (event.keyCode == 8) {
     del_char();
   } else if (event.keyCode == 48) {
-    update_current_ask(0);
+    update_number_field(0);
   } else if (event.keyCode == 49) {
-    update_current_ask(1);
+    update_number_field(1);
   } else if (event.keyCode == 50) {
-    update_current_ask(2);
+    update_number_field(2);
   } else if (event.keyCode == 51) {
-    update_current_ask(3);
+    update_number_field(3);
   } else if (event.keyCode == 52) {
-    update_current_ask(4);
+    update_number_field(4);
   } else if (event.keyCode == 53) {
-    update_current_ask(5);
+    update_number_field(5);
   } else if (event.keyCode == 54) {
-    update_current_ask(6);
+    update_number_field(6);
   } else if (event.keyCode == 55) {
-    update_current_ask(7);
+    update_number_field(7);
   } else if (event.keyCode == 56) {
-    update_current_ask(8);
+    update_number_field(8);
   } else if (event.keyCode == 57) {
-    update_current_ask(9);
+    update_number_field(9);
   }
 });
 
 function del_char() {
-  var $current_ask = $('.current-ask .button-value');
-  Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
-  Bid.temp_ask = Bid.temp_ask.slice(0,-1);
-  Bid.temp_ask = Math.abs(Bid.temp_ask);
-  Bid.temp_ask = Bid.temp_ask.toLocaleString();
-  $current_ask.html(Bid.temp_ask);
+  if (Bid.increment_focus) {
+    Bid.temp_increment = Bid.temp_increment.replace(/,/g, '');
+    Bid.temp_increment = Bid.temp_increment.slice(0,-1);
+    Bid.temp_increment = Math.abs(Bid.temp_increment);
+    Bid.temp_increment = Bid.temp_increment.toLocaleString();
+    $('.current-increment .increment').html(Bid.temp_increment);
+  } else {
+    Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
+    Bid.temp_ask = Bid.temp_ask.slice(0,-1);
+    Bid.temp_ask = Math.abs(Bid.temp_ask);
+    Bid.temp_ask = Bid.temp_ask.toLocaleString();
+    $('.current-ask .button-value').html(Bid.temp_ask);
+  }
 }
 
-function update_current_ask(value) {
-  var $current_ask = $('.current-ask .button-value');
-  $('.wide-button.current-ask').addClass('typing');
+function focus_increment() {
+  Bid.increment_focus = true;
+  $('.wide-button.current-increment').addClass('typing');
+}
 
-  Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
-  Bid.temp_ask += value;
-  Bid.temp_ask = Math.abs(Bid.temp_ask);
-  Bid.temp_ask = Bid.temp_ask.toLocaleString();
-  $current_ask.html(Bid.temp_ask);
+function update_number_field(value) {
+  if (Bid.increment_focus) {
+    Bid.temp_increment = Bid.temp_increment.replace(/,/g, '');
+    Bid.temp_increment += value;
+    Bid.temp_increment = Math.abs(Bid.temp_increment);
+    Bid.temp_increment = Bid.temp_increment.toLocaleString();
+    $('.current-increment .increment').html(Bid.temp_increment);
+  } else {
+    $('.wide-button.current-ask').addClass('typing');
+    Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
+    Bid.temp_ask += value;
+    Bid.temp_ask = Math.abs(Bid.temp_ask);
+    Bid.temp_ask = Bid.temp_ask.toLocaleString();
+    $('.current-ask .button-value').html(Bid.temp_ask);
+  }
 }
 
 function reset_current_ask() {
@@ -92,15 +115,30 @@ function reset_current_ask() {
   typing = false;
 }
 
-function set_current_ask() {
-  if (Bid.temp_ask !== '') {
-    Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ''));
-    Bid.ask_string = Bid.temp_ask;
-    Bid.temp_ask = '';
+function set_current_number() {
+  if (Bid.increment_focus) {
+    if (Bid.temp_increment !== '') {
+      Bid.increment_value = Math.abs(Bid.temp_increment.replace(/,/g, ''));
+      Bid.increment_string = Bid.temp_increment;
+      Bid.temp_increment = '';
 
-    $('.wide-button.current-ask').removeClass('typing');
-    typing = false;
+      $('.current-increment').removeClass('typing');
+      Bid.increment_focus = false;
+    }
+  } else {
+    if (Bid.temp_ask !== '') {
+      Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ''));
+      Bid.ask_string = Bid.temp_ask;
+      Bid.temp_ask = '';
+
+      $('.current-ask').removeClass('typing');
+    }
   }
+  typing = false;
+}
+
+function set_increment() {
+  $('.increment').html(Bid.increment_string);
 }
 
 function bid(source) {
@@ -116,7 +154,7 @@ function bid(source) {
 }
 
 function increment_current_ask() {
-  Bid.ask_value  = Bid.ask_value + Bid.increment;
+  Bid.ask_value  = Bid.ask_value + Bid.increment_value;
   Bid.ask_string = Bid.ask_value.toLocaleString();
   $('.current-ask .button-value').html(Bid.ask_string);
 }
@@ -150,10 +188,6 @@ function message(message, class_name) {
 function active_state(class_name) {
   $(class_name).addClass('active');
   setTimeout(function() { $(class_name).removeClass('active') }, 50);
-}
-
-function set_increment() {
-  $('.increment').html(Bid.increment);
 }
 
 function decrement_max_bids() {

@@ -79,7 +79,7 @@ body {
 
 .small-button.cancel {
   background: rgba(98, 46, 236, .25);
-  color: #622EEC;
+  color: #622EEC !important;
 }
 
 .control-panel { padding: 10px 10px 10px 0; }
@@ -208,7 +208,7 @@ body {
 .line-item.highest-bid { color: #000; font-weight: bold; }
 .line-item.rejected span { color: #ccc; text-decoration: line-through; }
 
-.typing { border-color: #6E1FFF; }
+.typing { border-color: #6E1FFF; color: #6E1FFF; }
 .typing span { color: #6E1FFF; }
 
 .value {
