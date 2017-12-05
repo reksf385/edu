@@ -89,6 +89,7 @@ function del_char() {
 function focus_increment() {
   Bid.increment_focus = true;
   $('.wide-button.current-increment').addClass('typing');
+  $('.current-increment .increment').html('0');
 }
 
 function update_number_field(value) {
