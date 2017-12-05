@@ -52,6 +52,36 @@ body {
   display: inline-block;
 }
 
+.action-buttons {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  font-size: 0;
+  display: none;
+}
+
+.typing .action-buttons { display: block; }
+
+.small-button {
+  display: inline-block;
+  width: 60px;
+  height: 38px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(98, 46, 236, 1);
+  text-align: center;
+  color: #fff !important;
+  border-radius: 5px;
+  padding: 12px 0 0 0;
+  margin: 0 3px 0 0;
+}
+
+.small-button.cancel {
+  background: rgba(98, 46, 236, .25);
+  color: #622EEC;
+}
+
 .control-panel { padding: 10px 10px 10px 0; }
 .activity-wrapper { padding: 10px 0 10px 10px; }
 
