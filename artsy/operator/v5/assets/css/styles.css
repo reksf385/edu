@@ -52,10 +52,13 @@ body {
   display: inline-block;
 }
 
+.control-panel { padding: 10px 0 10px 10px; }
+.activity-wrapper { padding: 10px 10px 10px 0; }
+
 .action-buttons {
   position: absolute;
   top: 3px;
-  right: 0;
+  left: 3px;
   font-size: 0;
   display: none;
 }
@@ -81,9 +84,6 @@ body {
   background: rgba(98, 46, 236, .25);
   color: #622EEC !important;
 }
-
-.control-panel { padding: 10px 10px 10px 0; }
-.activity-wrapper { padding: 10px 0 10px 10px; }
 
 .activity {
   width: 300px;
@@ -137,8 +137,19 @@ body {
 .wide-button.current-increment {
   height: 48px;
   font-size: 14px;
-  padding: 16px 0 0 10px;
+  padding: 16px 15px 0 10px;
   font-weight: bold;
+}
+
+.wide-button.current-increment.typing {
+  font-size: 0;
+}
+
+.increment-wrapper {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  font-size: 14px;
 }
 
 .square-button.active { background: #000; }
@@ -168,16 +179,11 @@ body {
   font-weight: bold;
 }
 
-.wide-button .button-description {
-  top: 15px;
-  bottom: auto;
-}
-
 .current-ask .button-value {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 15px;
+  right: 15px;
   text-align: right;
 }
 

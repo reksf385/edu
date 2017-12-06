@@ -3,8 +3,8 @@ var Bid = {
       ask_value:        1000,
       ask_string:       '1,000',
       temp_ask:         '',
-      sell_value:       1000,
-      sell_string:      '1,000',
+      sell_value:       0,
+      sell_string:      '0',
       increment_focus: false,
       increment_value:  500,
       increment_string: '500',
@@ -129,9 +129,9 @@ function set_current_number() {
       Bid.increment_value = Math.abs(Bid.temp_increment.replace(/,/g, ''));
       Bid.increment_string = Bid.temp_increment;
       Bid.temp_increment = '';
-
       $('.current-increment').removeClass('typing');
       Bid.increment_focus = false;
+      increment_current_ask(true);
     }
   } else {
     if (Bid.temp_ask !== '') {
@@ -161,9 +161,16 @@ function bid(source) {
   }
 }
 
-function increment_current_ask() {
-  Bid.ask_value  = Bid.ask_value + Bid.increment_value;
-  Bid.ask_string = Bid.ask_value.toLocaleString();
+function increment_current_ask(updating_increment) {
+  if (updating_increment) {
+    if (Bid.sell_value != 0) {
+      Bid.ask_value  = Bid.sell_value + Bid.increment_value;
+      Bid.ask_string = Bid.ask_value.toLocaleString();
+    }
+  } else {
+    Bid.ask_value  = Bid.ask_value + Bid.increment_value;
+    Bid.ask_string = Bid.ask_value.toLocaleString();
+  }
   $('.current-ask .button-value').html(Bid.ask_string);
 }
 
