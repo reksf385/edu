@@ -231,9 +231,9 @@ body {
 
 .sell-button {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  width: 260px;
+  bottom: 15px;
+  left: 15px;
+  width: 266px;
   height: 60px;
   background: #000;
   color: #fff;
