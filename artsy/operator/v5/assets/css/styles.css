@@ -90,7 +90,7 @@ body {
   height: 232px;
   overflow: hidden;
   background: #f1f1f1;
-  padding: 20px;
+  padding: 15px;
   border: 2px solid #e5e5e5;
   border-radius: 5px;
   position: relative;
@@ -137,7 +137,7 @@ body {
 .wide-button.current-increment {
   height: 48px;
   font-size: 14px;
-  padding: 16px 15px 0 10px;
+  padding: 16px 15px 0 15px;
   font-weight: bold;
 }
 
