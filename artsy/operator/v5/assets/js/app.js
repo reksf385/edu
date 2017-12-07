@@ -10,7 +10,6 @@ var Bid = {
       increment_value:  500,
       increment_string: '500',
       temp_increment:   '',
-      online:           4,
       footing:          false,
       online_max_bid:   5500
     };
@@ -149,6 +148,7 @@ function set_current_number() {
       $('.wrapper').removeClass('initializing');
     }
   }
+  check_for_online_bidders();
   typing = false;
 }
 
@@ -163,7 +163,6 @@ function bid(source) {
     increment_sell_at();
     increment_current_ask();
     add_to_history(source);
-    decrement_max_bids();
     check_for_online_bidders();
   }
 }
@@ -188,7 +187,7 @@ function increment_sell_at() {
 }
 
 function add_to_history(source) {
-  if (source == 'Floor' && Bid.online >= 1) {
+  if (source == 'Floor' && Bid.online_max_bid >= Bid.sell_value) {
     var online_bidder_id = '#' + Math.floor(Math.random() * 1000000);
     var line_item = '<div class="line-item"><span class="description">' + source + '</span><span class="value">' + Bid.sell_string + '</span></div>' +
                     '<div class="line-item rejected"><span class="description">' + online_bidder_id + '</span><span class="value">' + Bid.sell_string + '</span></div>';
@@ -212,23 +211,9 @@ function active_state(class_name) {
   setTimeout(function() { $(class_name).removeClass('active') }, 50);
 }
 
-function decrement_max_bids() {
-  var class_name;
-
-  Bid.online -=1;
-  if (Bid.online >= 3) {
-    class_name = 'q3';
-  } else if (Bid.online == 2) {
-    class_name = 'q2';
-  }
-
-  $('.large').attr('class', 'online-bidder square-button large ');
-  $('.large').addClass(class_name);
-}
-
 function check_for_online_bidders() {
-  if (Bid.online >= 1) {
-    $('.large .square-key').html(Bid.ask_string);
+  if (Bid.online_max_bid >= Bid.ask_value) {
+    enable_online_bidding();
     set_footing();
   } else {
     disable_online_bidding();
@@ -236,10 +221,21 @@ function check_for_online_bidders() {
 }
 
 function set_footing() {
-  $('.footing').toggleClass('on');
+  var remainder = (Bid.online_max_bid - Bid.ask_value) / Bid.increment_value;
+  console.log(remainder);
+  if (remainder % 2 === 0) {
+    // even
+    $('.footing').addClass('on');
+  } else {
+    // odd
+    $('.footing').removeClass('on');
+  }
+}
+
+function enable_online_bidding() {
+  $('.square-button.online').removeClass('disabled');
 }
 
 function disable_online_bidding() {
-  $('.large .square-key').html('&ndash;');
-  $('.square-button.online, .square-button.large.online-bidder').addClass('disabled');
+  $('.square-button.online').addClass('disabled');
 }
