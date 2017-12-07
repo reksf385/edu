@@ -1,7 +1,8 @@
 var typing = false;
 var Bid = {
-      ask_value:        1000,
-      ask_string:       '1,000',
+      lot_initialized:  false,
+      ask_value:        0,
+      ask_string:       '0',
       temp_ask:         '',
       sell_value:       0,
       sell_string:      '0',
@@ -10,7 +11,8 @@ var Bid = {
       increment_string: '500',
       temp_increment:   '',
       online:           4,
-      footing:          false
+      footing:          false,
+      online_max_bid:   5500
     };
 
 reset_current_number();
@@ -115,12 +117,16 @@ function reset_current_number() {
     $('.current-increment .increment').html(Bid.increment_string);
     $('.current-increment').removeClass('typing');
     Bid.increment_focus = false;
-  } else {
+    typing = false;
+  } else if (Bid.lot_initialized) {
     Bid.temp_ask = '';
     $('.current-ask .button-value').html(Bid.ask_string);
     $('.current-ask').removeClass('typing');
+    typing = false;
+  } else {
+    typing = true;
+    Bid.lot_initialized = true;
   }
-  typing = false;
 }
 
 function set_current_number() {
@@ -140,6 +146,7 @@ function set_current_number() {
       Bid.temp_ask = '';
 
       $('.current-ask').removeClass('typing');
+      $('.wrapper').removeClass('initializing');
     }
   }
   typing = false;

@@ -6,7 +6,7 @@
   </head>
 
   <body>
-    <div class="wrapper">
+    <div class="wrapper initializing">
       <div class="header">
         <img src="assets/img/header.svg" />
       </div>
@@ -26,13 +26,13 @@
       </div>
 
       <div class="activity-wrapper">
-        <div class="wide-button current-ask">
+        <div class="wide-button current-ask typing">
           <span class="button-description">Current ask</span>
           <div class="action-buttons">
             <span class="cancel small-button">Cancel</span>
             <span class="ok small-button">Ok</span>
           </div>
-          <span class="button-value"></span>
+          <span class="button-value">0</span>
         </div>
 
         <div class="wide-button current-increment">
@@ -44,7 +44,6 @@
         </div>
 
         <div class="activity">
-          <h2>Bid history</h2>
           <div class="history"></div>
           <div data-keycode="83" class="sell-button">
             <span class="description">Sell (S)</span>
