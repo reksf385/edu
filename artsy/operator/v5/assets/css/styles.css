@@ -189,6 +189,14 @@ body {
   font-weight: bold;
 }
 
+.current-ask .button-description::after {
+  content: 'Current ask';
+}
+
+.initializing .current-ask .button-description::after {
+  content: 'Starting ask';
+}
+
 .current-ask .button-value {
   position: absolute;
   top: 50%;
