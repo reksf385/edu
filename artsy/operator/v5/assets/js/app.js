@@ -11,11 +11,12 @@ var Bid = {
       increment_string: '500',
       temp_increment:   '',
       footing:          false,
-      online_max_bid:   5500
+      online_max_bid:   4700
     };
 
 reset_current_number();
 set_increment();
+display_online_max_bid();
 
 $('.square-button').click(function(event) {
     var event    = $.Event('keyup'),
@@ -221,14 +222,12 @@ function check_for_online_bidders() {
 }
 
 function set_footing() {
-  var remainder = (Bid.online_max_bid - Bid.ask_value) / Bid.increment_value;
+  var remainder = Math.floor((Bid.online_max_bid - Bid.ask_value) / Bid.increment_value);
   console.log(remainder);
   if (remainder % 2 === 0) {
-    // even
-    $('.footing').addClass('on');
+    $('.footing').addClass('on'); // even
   } else {
-    // odd
-    $('.footing').removeClass('on');
+    $('.footing').removeClass('on'); // odd
   }
 }
 
@@ -238,4 +237,14 @@ function enable_online_bidding() {
 
 function disable_online_bidding() {
   $('.square-button.online').addClass('disabled');
+}
+
+function display_online_max_bid() {
+  $('.online-max-bid').html(Bid.online_max_bid.toLocaleString());
+}
+
+function max(value) {
+  Bid.online_max_bid = value;
+  check_for_online_bidders();
+  display_online_max_bid();
 }
