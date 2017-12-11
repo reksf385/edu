@@ -138,7 +138,6 @@ function set_current_number() {
       $('.current-increment').removeClass('typing');
       Bid.increment_focus = false;
       increment_current_ask(true);
-      $('.increment-wrapper').addClass('override');
     }
   } else {
     if (Bid.temp_ask !== '') {
