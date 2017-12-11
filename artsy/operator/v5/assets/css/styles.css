@@ -32,7 +32,7 @@ body {
 .wrapper {
   width: 660px;
   height: 595px;
-  margin: 30px auto;
+  margin: 0 auto 30px auto;
   background: #fff;
   position: relative;
   overflow: hidden;
@@ -284,4 +284,25 @@ body {
   border: 2px solid #e5e5e5;
   background: #fff;
   color: #ccc;
+}
+
+.utilities {
+  position: relative;
+  width: 660px;
+  margin: 15px auto;
+}
+
+.cog {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.auction-house {
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: 15px;
+  position: relative;
+  top: 12px;
 }
