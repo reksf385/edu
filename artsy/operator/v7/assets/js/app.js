@@ -6,6 +6,7 @@ var Bid = {
       temp_ask:           '',
       sell_value:         0,
       sell_string:        '0',
+      is_split:           false,
       override_increment: false,
       increment_focus:    false,
       increment_value:    50,
@@ -51,25 +52,25 @@ $(document).keyup(function(event) {
   } else if (event.keyCode == 8) {
     del_char();
   } else if (event.keyCode == 48) {
-    update_number_field(0);
+    update_number(0);
   } else if (event.keyCode == 49) {
-    update_number_field(1);
+    update_number(1);
   } else if (event.keyCode == 50) {
-    update_number_field(2);
+    update_number(2);
   } else if (event.keyCode == 51) {
-    update_number_field(3);
+    update_number(3);
   } else if (event.keyCode == 52) {
-    update_number_field(4);
+    update_number(4);
   } else if (event.keyCode == 53) {
-    update_number_field(5);
+    update_number(5);
   } else if (event.keyCode == 54) {
-    update_number_field(6);
+    update_number(6);
   } else if (event.keyCode == 55) {
-    update_number_field(7);
+    update_number(7);
   } else if (event.keyCode == 56) {
-    update_number_field(8);
+    update_number(8);
   } else if (event.keyCode == 57) {
-    update_number_field(9);
+    update_number(9);
   }
 });
 
@@ -95,7 +96,7 @@ function focus_increment() {
   $('.current-increment .increment').html('0');
 }
 
-function update_number_field(value) {
+function update_number(value) {
   if (Bid.increment_focus) {
     Bid.temp_increment = Bid.temp_increment.replace(/,/g, '');
     Bid.temp_increment += value;
