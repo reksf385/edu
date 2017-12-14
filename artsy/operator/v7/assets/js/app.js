@@ -202,9 +202,10 @@ function set_increment() {
 }
 
 function bid(source) {
-  var submittable_bid = source == 'online' && $('.online').hasClass('disabled') ? false : true;
+  var submittable_bid = source == 'online' && $('.online').hasClass('disabled') ? false : true,
+      fixed_number    = $('.typing')[0] == undefined ? true : false;
 
-  if (submittable_bid) {
+  if (fixed_number && submittable_bid) {
     set_sell_at();
     set_increment();
     set_current_ask(false);
