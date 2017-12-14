@@ -1,20 +1,21 @@
 var typing = false;
 var Bid = {
-      lot_initialized:    false,
-      ask_value:          0,
-      ask_string:         '0',
-      temp_ask:           '',
-      sell_value:         0,
-      sell_string:        '0',
-      is_split:           false,
-      split_count:        0,
-      override_increment: false,
-      increment_focus:    false,
-      increment_value:    50,
-      increment_string:   '50',
-      temp_increment:     '',
-      footing:            false,
-      online_max_bid:     4500
+      lot_initialized:          false,
+      ask_value:                0,
+      ask_string:               '0',
+      temp_ask:                 '',
+      sell_value:               0,
+      sell_string:              '0',
+      is_split:                 false,
+      split_count:              0,
+      override_increment:       false,
+      override_increment_value: 0,
+      increment_focus:          false,
+      increment_value:          50,
+      increment_string:         '50',
+      temp_increment:           '',
+      footing:                  false,
+      online_max_bid:           2400
     };
 
 reset_number();
@@ -36,6 +37,8 @@ $(document).keyup(function(event) {
     reset_number();
   } else if (event.keyCode == 13) {
     set_number();
+  } else if (event.keyCode == 83 && Bid.sell_value != 0) {
+    sell_lot();
   } else if (event.keyCode == 73) {
     focus_increment();
   } else if (event.keyCode == 79) {
@@ -141,6 +144,7 @@ function set_number() {
       $('.current-increment').removeClass('typing');
       Bid.increment_focus = false;
       Bid.override_increment = true;
+      Bid.override_increment_value = Bid.increment_value;
       set_current_ask(true);
     }
   } else {
@@ -162,9 +166,7 @@ function set_number() {
 }
 
 function find_increment_value() {
-  if (Bid.override_increment) {
-    return Bid.increment_value;
-  } else if (Bid.is_split) {
+  if (Bid.is_split) {
     return split_increment();
   } else {
     return increment_policy_value();
@@ -172,7 +174,9 @@ function find_increment_value() {
 }
 
 function increment_policy_value() {
-  if (Bid.ask_value < 1000) {
+  if (Bid.override_increment) {
+    return Bid.override_increment_value;
+  } else if (Bid.ask_value < 1000) {
     return 50;
   } else if (Bid.ask_value < 2000) {
     return 100;
@@ -331,6 +335,12 @@ function split_increment() {
     Bid.split_count = 0;
   }
   return Bid.increment_value;
+}
+
+function sell_lot() {
+  alert('Confirm sale of lot?');
+  var url = window.location;
+  window.location.href = url;
 }
 
 
