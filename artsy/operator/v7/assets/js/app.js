@@ -161,41 +161,52 @@ function set_number() {
   typing = false;
 }
 
-function set_increment() {
-  if (Bid.is_split) {
-    split_increment();
-  } else if (Bid.ask_value < 1000) {
-    Bid.increment_value = 50;
-  } else if (Bid.ask_value < 2000) {
-    Bid.increment_value = 100;
-  } else if (Bid.ask_value < 3000) {
-    Bid.increment_value = 200;
-  } else if (Bid.ask_value == 3000) {
-    Bid.increment_value = 200;
-  } else if (Bid.ask_value == 3200) {
-    Bid.increment_value = 300;
-  } else if (Bid.ask_value == 3500) {
-    Bid.increment_value = 300;
-  } else if (Bid.ask_value == 3800) {
-    Bid.increment_value = 200;
-  } else if (Bid.ask_value == 4000) {
-    Bid.increment_value = 200;
-  } else if (Bid.ask_value == 4200) {
-    Bid.increment_value = 300;
-  } else if (Bid.ask_value == 4500) {
-    Bid.increment_value = 300;
-  } else if (Bid.ask_value == 4800) {
-    Bid.increment_value = 200;
-  } else if (Bid.ask_value < 10000) {
-    Bid.increment_value = 500;
-  } else if (Bid.ask_value < 20000) {
-    Bid.increment_value = 1000;
-  } else if (Bid.ask_value < 30000) {
-    Bid.increment_value = 2000;
+function find_increment_value() {
+  if (Bid.override_increment) {
+    return Bid.increment_value;
+  } else if (Bid.is_split) {
+    return split_increment();
   } else {
-    Bid.increment_value = 5000;
+    return increment_policy_value();
   }
+}
 
+function increment_policy_value() {
+  if (Bid.ask_value < 1000) {
+    return 50;
+  } else if (Bid.ask_value < 2000) {
+    return 100;
+  } else if (Bid.ask_value < 3000) {
+    return 200;
+  } else if (Bid.ask_value <= 3000) {
+    return 200;
+  } else if (Bid.ask_value <= 3200) {
+    return 300;
+  } else if (Bid.ask_value <= 3500) {
+    return 300;
+  } else if (Bid.ask_value <= 3800) {
+    return 200;
+  } else if (Bid.ask_value <= 4000) {
+    return 200;
+  } else if (Bid.ask_value <= 4200) {
+    return 300;
+  } else if (Bid.ask_value <= 4500) {
+    return 300;
+  } else if (Bid.ask_value <= 4800) {
+    return 200;
+  } else if (Bid.ask_value < 10000) {
+    return 500;
+  } else if (Bid.ask_value < 20000) {
+    return 1000;
+  } else if (Bid.ask_value < 30000) {
+    return 2000;
+  } else {
+    return 5000;
+  }
+}
+
+function set_increment() {
+  Bid.increment_value = find_increment_value();
   Bid.increment_string = Bid.increment_value.toLocaleString();
 
   $('.increment').html(Bid.increment_string);
@@ -307,13 +318,19 @@ function num_to_val(num) {
 
 function split_increment() {
   if (Bid.split_count == 0) {
-    Bid.increment_value = Bid.increment_value / 2;
+    Bid.increment_value = Bid.ask_value - Bid.sell_value;
     Bid.increment_string = Bid.increment_value.toLocaleString();
     Bid.split_count += 1;
-  } else if (Bid.split_count == 2) {
+  } else if (Bid.split_count == 1) {
+    Bid.increment_value = increment_policy_value() - Bid.increment_value;
+    Bid.increment_string = Bid.increment_value.toLocaleString();
     Bid.split_count += 1;
   } else {
+    Bid.increment_value = increment_policy_value();
     Bid.is_split = false;
     Bid.split_count = 0;
   }
+  return Bid.increment_value;
 }
+
+
