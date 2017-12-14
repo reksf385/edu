@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title> </title>
+    <link href="assets/css/styles.css" media="all" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <div class="utilities">
+      <img src="assets/img/artsy-logo.svg" />
+      <span class="auction-house">Sotheby&rsquo;s</span>
+      <img class="cog" src="assets/img/cog.svg" />
+    </div>
+    <div class="wrapper initializing">
+      <div class="header">
+        <img src="assets/img/header.jpg" />
+      </div>
+
+      <div class="control-panel">
+        <div data-keycode="70" class="square-button floor"><span class="square-key">Floor</span><span class="square-description">F</span></div>
+        <div data-keycode="79" class="square-button online">
+          <span class="square-key">Online</span>
+          <span class="square-description">O</span>
+          <span class="online-max-bid"></span>
+          <div class="footing"><span class="footing-indicator"></span></div>
+        </div>
+
+        <div data-keycode="87" class="square-button warning"><span class="square-key">Warning</span><span class="square-description">W</span></div>
+        <div data-keycode="76" class="square-button last-call"><span class="square-key">Last call</span><span class="square-description">L</span></div>
+
+        <div data-keycode="83" class="square-button undo"><span class="square-key">Undo</span><span class="square-description">⌘+Z</span></div>
+      </div>
+
+      <div class="activity-wrapper">
+        <div class="wide-button current-ask typing">
+          <span class="button-description"></span>
+          <div class="action-buttons">
+            <span class="cancel small-button">Cancel</span>
+            <span class="ok small-button">Ok</span>
+          </div>
+          <span class="button-value">0</span>
+        </div>
+
+        <div class="wide-button current-increment">
+          <div class="action-buttons">
+            <span class="cancel small-button">Cancel</span>
+            <span class="ok small-button">Ok</span>
+          </div>
+          Increment (i) <span class="increment-wrapper">+<span class="increment"></span></span>
+        </div>
+
+        <div class="activity">
+          <div class="history"></div>
+          <div data-keycode="83" class="sell-button">
+            <span class="description">Sell (S)</span>
+            <span class="button-value">&ndash;</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
