@@ -7,6 +7,7 @@ var Bid = {
       sell_value:         0,
       sell_string:        '0',
       is_split:           false,
+      split_count:        0,
       override_increment: false,
       increment_focus:    false,
       increment_value:    50,
@@ -30,7 +31,7 @@ $('.square-button').click(function(event) {
 
 $(document).keyup(function(event) {
   event.preventDefault();
-  console.log(event.keyCode);
+  console.log('key: ', event.keyCode);
   if (event.keyCode == 27) {
     reset_number();
   } else if (event.keyCode == 13) {
@@ -144,6 +145,8 @@ function set_number() {
     }
   } else {
     if (Bid.temp_ask !== '') {
+      set_bid_split_status();
+
       Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ''));
       Bid.ask_string = Bid.temp_ask;
       Bid.temp_ask = '';
@@ -159,10 +162,8 @@ function set_number() {
 }
 
 function set_increment() {
-
-
-  if (Bid.override_increment) {
-    return;
+  if (Bid.is_split) {
+    split_increment();
   } else if (Bid.ask_value < 1000) {
     Bid.increment_value = 50;
   } else if (Bid.ask_value < 2000) {
@@ -291,4 +292,27 @@ function max(value) {
   Bid.online_max_bid = value;
   check_for_online_bidders();
   display_online_max_bid();
+}
+
+function set_bid_split_status() {
+  if (Bid.ask_string != 0 && num_to_val(Bid.temp_ask) < Bid.ask_value && Bid.sell_value > 0) {
+    Bid.is_split = true;
+  }
+}
+
+function num_to_val(num) {
+  return Math.abs(num.replace(/,/g, ''));
+}
+
+function split_increment() {
+  if (Bid.split_count == 0) {
+    Bid.increment_value = Bid.increment_value / 2;
+    Bid.increment_string = Bid.increment_value.toLocaleString();
+    Bid.split_count += 1;
+  } else if (Bid.split_count == 2) {
+    Bid.split_count += 1;
+  } else {
+    Bid.is_split = false;
+    Bid.split_count = 0;
+  }
 }
