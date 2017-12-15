@@ -88,6 +88,10 @@ body {
   color: #622EEC !important;
 }
 
+.small-button.floor {
+  width: 74px;
+}
+
 .initializing .small-button.cancel { display: none; }
 
 .activity {
