@@ -335,7 +335,7 @@ body {
 
 .confirm-sale {
   width: 280px;
-  height: 160px;
+  height: 150px;
   border: 2px solid #000;
   position: absolute;
   z-index: 1000;
@@ -348,8 +348,8 @@ body {
 }
 
 .sale-amount {
-  margin-top: 10px;
-  font-size: 35px;
+  margin: 10px 0 5px 0;
+  font-size: 40px;
 }
 
 .winning-bidder {
