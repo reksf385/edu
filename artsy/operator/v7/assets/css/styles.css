@@ -268,6 +268,7 @@ body {
   height: 60px;
   background: #000;
   color: #fff;
+  cursor: pointer;
 }
 
 .sell-button .description {

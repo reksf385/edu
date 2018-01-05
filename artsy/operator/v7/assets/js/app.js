@@ -22,7 +22,7 @@ reset_number();
 set_increment();
 display_online_max_bid();
 
-$('.square-button').click(function(event) {
+$('.square-button, .small-button, .sell-button').click(function(event) {
     var event    = $.Event('keyup'),
         key_code = $(this).data('keycode');
 
