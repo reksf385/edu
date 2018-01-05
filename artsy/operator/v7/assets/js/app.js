@@ -218,9 +218,11 @@ function set_increment() {
 
 function bid(source) {
   var submittable_bid = source == 'online' && $('.online').hasClass('disabled') ? false : true,
-      fixed_number    = $('.typing')[0] == undefined ? true : false;
+      fixed_number    = $('.typing')[0] == undefined ? true : false,
+      set_with_floor  = source == 'Floor' ? true : false;
 
-  if (fixed_number && submittable_bid) {
+  if (fixed_number && submittable_bid || set_with_floor) {
+    set_number();
     set_sell_at();
     set_increment();
     set_current_ask(false);
