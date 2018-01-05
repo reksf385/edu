@@ -318,3 +318,40 @@ body {
   position: relative;
   top: 12px;
 }
+
+.confirm-sale-wrapper {
+  display: none;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+}
+
+.confirm-sale-wrapper.show { display: block; }
+.confirm-sale-wrapper.show .action-buttons { display: block; }
+
+.confirm-sale {
+  width: 280px;
+  height: 160px;
+  border: 2px solid #000;
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 14px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.sale-amount {
+  margin-top: 10px;
+  font-size: 35px;
+}
+
+.winning-bidder {
+  border-bottom: 1px solid #000;
+}

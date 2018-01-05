@@ -34,9 +34,9 @@ $(document).keyup(function(event) {
   event.preventDefault();
   console.log('key: ', event.keyCode);
   if (event.keyCode == 27) {
-    reset_number();
+    $('.confirm-sale-wrapper').hasClass('show') ? cancel_sale() : reset_number();
   } else if (event.keyCode == 13) {
-    set_number();
+    $('.confirm-sale-wrapper').hasClass('show') ? confirm_sale() : set_number();
   } else if (event.keyCode == 83 && Bid.sell_value != 0) {
     sell_lot();
   } else if (event.keyCode == 73) {
@@ -261,6 +261,9 @@ function add_to_history(source) {
   $('.history').prepend(line_item);
   $('.line-item').removeClass('highest-bid');
   $($('.line-item')[0]).addClass('highest-bid');
+
+  $('.confirm-sale .sale-amount').html(Bid.sell_string);
+  $('.confirm-sale .winning-bidder').html(source);
 }
 
 function message(message, class_name) {
@@ -338,9 +341,14 @@ function split_increment() {
 }
 
 function sell_lot() {
-  alert('Confirm sale of lot?');
+  $('.confirm-sale-wrapper').addClass('show');
+}
+
+function cancel_sale() {
+  $('.confirm-sale-wrapper').removeClass('show');
+}
+
+function confirm_sale() {
   var url = window.location;
   window.location.href = url;
 }
-
-
