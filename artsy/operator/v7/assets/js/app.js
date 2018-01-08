@@ -15,7 +15,7 @@ var Bid = {
       increment_string:         '50',
       temp_increment:           '',
       footing:                  false,
-      online_max_bid:           2400
+      online_max_bid:           8000
     };
 
 reset_number();
