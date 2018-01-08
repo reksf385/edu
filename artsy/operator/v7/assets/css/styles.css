@@ -245,8 +245,8 @@ body {
 .line-item.highest-bid { color: #000; font-weight: bold; }
 .line-item.rejected span { color: #ccc; text-decoration: line-through; }
 
-.typing { border-color: #6E1FFF; color: #6E1FFF; }
-.typing span { color: #6E1FFF; }
+.wide-button:hover, .typing { border-color: #6E1FFF; color: #6E1FFF; }
+.wide-button:hover, .typing span { color: #6E1FFF; }
 
 .value {
   position: absolute;
