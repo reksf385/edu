@@ -299,8 +299,9 @@ body {
 
 .utilities {
   position: relative;
-  width: 660px;
+  width: 880px;
   margin: 15px auto;
+  color: #fff;
 }
 
 .cog {
