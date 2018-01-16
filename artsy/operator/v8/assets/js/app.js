@@ -376,6 +376,14 @@ function max(value) {
   Bid.online_max_bid = value;
   check_for_online_bidders();
   display_high_and_max();
+  initialize_footing();
+}
+
+function high(value) {
+  Bid.online_high_bid = value;
+  check_for_online_bidders();
+  display_high_and_max();
+  initialize_footing();
 }
 
 function set_bid_split_status() {
