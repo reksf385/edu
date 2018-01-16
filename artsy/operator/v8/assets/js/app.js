@@ -299,12 +299,13 @@ function bid(source) {
       set_with_floor  = source == 'Floor' ? true : false;
 
   if (fixed_number && submittable_bid || set_with_floor) {
+    set_number();
     set_sell_at();
     set_increment();
     set_current_ask(false);
     add_to_history(source);
-    set_number();
     check_for_online_bidders();
+    slide_to_foot();
   }
 }
 
