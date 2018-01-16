@@ -15,7 +15,8 @@ var Bid = {
       increment_string:         '50',
       temp_increment:           '',
       footing:                  false,
-      online_max_bid:           8000
+      online_max_bid:           8000,
+      online_high_bid:          3500
     };
 
 var foot = [50,
@@ -95,7 +96,7 @@ var foot = [50,
 initialize_footing();
 reset_number();
 set_increment();
-display_online_max_bid();
+display_high_and_max();
 
 $('.square-button, .small-button, .sell-button, .wide-button').click(function(event) {
   event.stopPropagation();
@@ -381,14 +382,10 @@ function disable_online_bidding() {
   $('.square-button.online').addClass('disabled');
 }
 
-function display_online_max_bid() {
-  $('.online-max-bid').html(Bid.online_max_bid.toLocaleString());
-}
-
 function max(value) {
   Bid.online_max_bid = value;
   check_for_online_bidders();
-  display_online_max_bid();
+  display_high_and_max();
 }
 
 function set_bid_split_status() {
@@ -435,16 +432,22 @@ function initialize_footing() {
   var output = '';
 
   for (i = 0; i < foot.length; i++) {
-    var side = i % 2 == 0 ? 'left' : 'right',
-        value  = 'val' + foot[i],
-        marker = Bid.online_max_bid == foot[i] ? 'max' : '',
-        css_classes = side + ' ' + value + ' ' + marker;
+    var side        = i % 2 == 0 ? 'left' : 'right',
+        value       = 'val' + foot[i],
+        max_marker  = Bid.online_max_bid == foot[i] ? 'max' : '',
+        high_marker = Bid.online_high_bid == foot[i] ? 'high' : '',
+        css_classes = side + ' ' + value + ' ' + max_marker + ' ' + high_marker;
 
     output += '<div class="foot ' + css_classes + '">' + foot[i].toLocaleString() + '</div>';
   }
 
   $('.footing-wrapper').html(output);
   set_footing_highlights();
+}
+
+function display_high_and_max() {
+  $('.high-max-wrapper .high .high-value').html(Bid.online_high_bid.toLocaleString());
+  $('.high-max-wrapper .max .max-value').html(Bid.online_max_bid.toLocaleString());
 }
 
 function set_footing_highlights() {

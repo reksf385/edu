@@ -387,6 +387,8 @@ body {
   text-align: center;
   border-radius: 2px;
   display: inline-block;
+  color: #000;
+  margin: 0 10px 10px 0;
 }
 
 .marker.high { background: #F1CD39; }
@@ -396,7 +398,13 @@ body {
   background: #333;
   margin-bottom: 2px;
   height: 75px;
+  font-size: 14px;
+  color: #fff;
+  padding: 17px 0 0 15px;
 }
+
+.high-max-wrapper .high-value,
+.high-max-wrapper .max-value { position: relative; top: 1px; }
 
 .footing-wrapper {
   background: #333 url('../img/divider.svg') repeat-y 99px 0;
