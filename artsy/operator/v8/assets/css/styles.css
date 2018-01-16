@@ -40,6 +40,7 @@ body {
   margin: 0 20px 0 0;
   background: #fff;
   position: relative;
+  display: inline-block;
 }
 
 .console::after {
@@ -370,3 +371,72 @@ body {
 .winning-bidder {
   border-bottom: 1px solid #000;
 }
+
+.sidebar-wrapper {
+  width: 200px;
+  height: 500px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.marker {
+  width: 32px;
+  font-size: 8px;
+  text-transform: uppercase;
+  padding: 5px 0 3px 0;
+  text-align: center;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.marker.high { background: #F1CD39; }
+.marker.max { background: #F7625A; }
+
+.high-max-wrapper {
+  background: #333;
+  margin-bottom: 2px;
+  height: 75px;
+}
+
+.footing-wrapper {
+  background: #333 url('../img/divider.svg') repeat-y 99px 0;
+  height: calc(100% - 77px);
+  overflow: hidden;
+  position: relative;
+}
+
+.foot {
+  font-size: 14px;
+  color: #666;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+}
+
+.foot.right { padding-left: 100px; }
+.foot.left { padding-right: 100px; }
+
+.foot.right.high::after,
+.foot.right.max::after,
+.foot.left.high::after,
+.foot.left.max::after {
+  width: 32px;
+  font-size: 8px;
+  text-transform: uppercase;
+  padding: 5px 0 3px 0;
+  text-align: center;
+  border-radius: 2px;
+  display: inline-block;
+  position: absolute;
+  color: #000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.foot.high::after { content: 'High'; background: #F1CD39; }
+.foot.max::after { content: 'Max'; background: #F7625A; }
+
+.foot.on,
+.foot.high,
+.foot.max { color: #fff; }
