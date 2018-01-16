@@ -14,7 +14,6 @@ var Bid = {
       increment_value:          50,
       increment_string:         '50',
       temp_increment:           '',
-      footing:                  false,
       online_max_bid:           8000,
       online_high_bid:          3500
     };
@@ -359,18 +358,8 @@ function active_state(class_name) {
 function check_for_online_bidders() {
   if (Bid.online_max_bid >= Bid.ask_value) {
     enable_online_bidding();
-    set_footing();
   } else {
     disable_online_bidding();
-  }
-}
-
-function set_footing() {
-  var remainder = Math.floor((Bid.online_max_bid - Bid.ask_value) / Bid.increment_value);
-  if (remainder % 2 === 0) {
-    $('.footing').addClass('on'); // even
-  } else {
-    $('.footing').removeClass('on'); // odd
   }
 }
 
