@@ -423,9 +423,11 @@ body {
 .footing-wrapper {
   background: #333 url('../img/divider.svg') repeat-y 99px 0;
   height: calc(100% - 77px);
-  overflow: hidden;
+  overflow: scroll;
   position: relative;
 }
+
+.footing-wrapper::-webkit-scrollbar { display: none; }
 
 .foot {
   font-size: 14px;
