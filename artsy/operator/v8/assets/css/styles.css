@@ -37,7 +37,7 @@ body {
 .console {
   width: 660px;
   height: 595px;
-  margin: 0 20px 0 0;
+  margin: 0;
   background: #fff;
   position: relative;
   display: inline-block;
@@ -51,6 +51,7 @@ body {
   width: 10px;
   height: 16px;
   background: url('../img/current-foot-indicator.svg');
+  z-index: 100;
 }
 
 .console.initializing .control-panel,
@@ -334,6 +335,7 @@ body {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .auction-house {
