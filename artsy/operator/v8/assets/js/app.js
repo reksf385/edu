@@ -14,7 +14,7 @@ var Bid = {
       increment_value:          50,
       increment_string:         '50',
       temp_increment:           '',
-      random_key:               Math.floor(Math.random() * foot.length),
+      random_key:               Math.floor(Math.random() * (foot.length - 5)),
       online_high_bid:          0,
       online_max_bid:           0
     };
