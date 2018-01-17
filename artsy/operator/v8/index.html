@@ -13,8 +13,8 @@
         <img class="cog" src="assets/img/cog.svg" />
       </div>
       <div class="console initializing">
-        <div class="confirm-sale-wrapper">
-          <div class="confirm-sale">
+        <div class="overlay-wrapper">
+          <div class="alert-window confirm-sale">
             Confirm sale
             <div class="sale-amount">2,000</div>
             Bidder: <span class="winning-bidder">#897239487</span>
@@ -23,9 +23,20 @@
               <span data-keycode="13" class="ok small-button">Ok</span>
             </div>
           </div>
+          <div class="alert-window pass-lot">
+            Are you sure you want to pass this lot?
+            <div class="action-buttons">
+              <span data-keycode="27" class="cancel small-button">Cancel</span>
+              <span data-keycode="13" class="ok small-button">Ok</span>
+            </div>
+          </div>
         </div>
         <div class="header">
-          <img src="assets/img/header.jpg" />
+          <img src="assets/img/artwork@2x.png" height="55" />
+          <div class="header-buttons">
+            <div data-keycode="67" class="header-button change-lot">Change lot</div>
+            <div data-keycode="80" class="header-button pass-lot">Pass lot</div>
+          </div>
         </div>
 
         <div class="control-panel">

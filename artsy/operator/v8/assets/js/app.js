@@ -97,7 +97,7 @@ reset_number();
 set_increment();
 display_high_and_max();
 
-$('.square-button, .small-button, .sell-button, .wide-button').click(function(event) {
+$('.square-button, .small-button, .sell-button, .wide-button, .header-button').click(function(event) {
   event.stopPropagation();
     var event    = $.Event('keyup'),
         key_code = $(this).data('keycode');
@@ -110,11 +110,13 @@ $(document).keyup(function(event) {
   event.preventDefault();
   console.log('key: ', event.keyCode);
   if (event.keyCode == 27) {
-    $('.confirm-sale-wrapper').hasClass('show') ? cancel_sale() : reset_number();
+    $('.overlay-wrapper').hasClass('show') ? cancel() : reset_number();
   } else if (event.keyCode == 13) {
-    $('.confirm-sale-wrapper').hasClass('show') ? confirm_sale() : set_number();
+    $('.overlay-wrapper').hasClass('show') ? confirm_sale() : set_number();
   } else if (event.keyCode == 83 && Bid.sell_value != 0) {
     sell_lot();
+  } else if (event.keyCode == 80) {
+    pass_lot();
   } else if (event.keyCode == 73) {
     focus_increment();
   } else if (event.keyCode == 79) {
@@ -342,8 +344,8 @@ function add_to_history(source) {
   $('.line-item').removeClass('highest-bid');
   $($('.line-item')[0]).addClass('highest-bid');
 
-  $('.confirm-sale .sale-amount').html(Bid.sell_string);
-  $('.confirm-sale .winning-bidder').html(source);
+  $('.alert-window.confirm-sale .sale-amount').html(Bid.sell_string);
+  $('.alert-window.confirm-sale .winning-bidder').html(source);
 }
 
 function message(message, class_name) {
@@ -414,11 +416,19 @@ function split_increment() {
 }
 
 function sell_lot() {
-  $('.confirm-sale-wrapper').addClass('show');
+  $('.overlay-wrapper').addClass('show');
+  $('.alert-window.confirm-sale').addClass('show');
 }
 
-function cancel_sale() {
-  $('.confirm-sale-wrapper').removeClass('show');
+function pass_lot() {
+  $('.overlay-wrapper').addClass('show');
+  $('.alert-window.pass-lot').addClass('show');
+}
+
+function cancel() {
+  $('.overlay-wrapper').removeClass('show');
+  $('.alert-window.confirm-sale').removeClass('show');
+  $('.alert-window.pass-lot').removeClass('show');
 }
 
 function confirm_sale() {

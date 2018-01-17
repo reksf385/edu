@@ -63,7 +63,32 @@ body {
   width: 100%;
   height: 95px;
   border-bottom: 1px solid #e5e5e5;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
+  position: relative;
+}
+
+.header-buttons {
+  width: 220px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.header-button {
+  background: #e5e5e5;
+  color: #000;
+  font-weight: bold;
+  padding: 10px 15px;
+  display: inline-block;
+  font-size: 14px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.header-button:hover {
+  color: #fff;
+  background: #000;
 }
 
 .control-panel, .activity-wrapper {
@@ -319,7 +344,7 @@ body {
   top: 12px;
 }
 
-.confirm-sale-wrapper {
+.overlay-wrapper {
   display: none;
   background: #fff;
   width: 100%;
@@ -330,10 +355,12 @@ body {
   z-index: 100000;
 }
 
-.confirm-sale-wrapper.show { display: block; }
-.confirm-sale-wrapper.show .action-buttons { display: block; }
+.overlay-wrapper.show { display: block; }
+.overlay-wrapper.show .action-buttons { display: block; }
 
-.confirm-sale {
+.overlay-wrapper .cancel { display: inline-block !important; }
+
+.alert-window {
   width: 280px;
   height: 150px;
   border: 2px solid #000;
@@ -345,7 +372,10 @@ body {
   font-size: 14px;
   padding: 10px;
   font-weight: bold;
+  display: none;
 }
+
+.alert-window.show { display: block; }
 
 .sale-amount {
   margin: 10px 0 5px 0;
