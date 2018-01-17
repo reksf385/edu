@@ -397,7 +397,7 @@ function set_footing_highlights() {
 function slide_to_foot() {
   var foot_to_slide_to = '.val' + Bid.ask_value,
       current_offset   = $('.footing').scrollTop(),
-      y_distance       = $(foot_to_slide_to).position().top + current_offset;
+      y_distance       = $(foot_to_slide_to).position().top + current_offset - 69;
 
   $('.footing').animate({ 'scrollTop': y_distance});
 }

@@ -446,6 +446,7 @@ body {
 .footing {
   overflow: scroll;
   height: 100%;
+  padding-top: 69px;
 }
 
 .footing::-webkit-scrollbar { display: none; }
