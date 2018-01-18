@@ -27,7 +27,7 @@ reset_number();
 set_increment();
 display_high_and_max();
 
-$('.square-button, .small-button, .small-wide-button, .wide-button, .header-button').click(function(event) {
+$('.square-button, .small-button, .small-wide-button, .wide-button, .dropdown-item').click(function(event) {
   event.stopPropagation();
     var event    = $.Event('keyup'),
         key_code = $(this).data('keycode');
