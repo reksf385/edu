@@ -283,7 +283,7 @@ body {
 }
 
 .floor { background: #0EDA83; }
-.online { background: #6E1FFF; }
+.online { background: #0EDA83 /*#6E1FFF*/; }
 .warning { background: #F1AF1B; }
 .last-call { background: #F7625A; }
 .undo { background: #ccc; }
@@ -480,12 +480,16 @@ ul, li {
 .high-max-wrapper .max-value { position: relative; top: 1px; }
 
 .footing-wrapper {
-  background: #333 url('../img/divider.svg') repeat-y 99px 0;
+  background: #333 url('../img/foot-highlighter.svg') no-repeat 0 0;
   height: 100%;
   position: relative;
   width: 200px;
   display: inline-block;
   margin-right: 2px;
+}
+
+.footing-wrapper.right {
+  background-position: 100px 0;
 }
 
 .footing {

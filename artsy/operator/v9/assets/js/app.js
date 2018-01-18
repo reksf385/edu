@@ -406,8 +406,10 @@ function display_high_and_max() {
 
 function set_footing_highlights() {
   var max_bid           = '.val' + Bid.online_max_bid,
-      foot_to_highlight = $(max_bid).hasClass('left') ? '.foot.left' : '.foot.right';
+      foot_to_highlight = $(max_bid).hasClass('left') ? '.foot.left' : '.foot.right',
+      class_to_add      = $(max_bid).hasClass('left') ? 'left' : 'right';
   $(foot_to_highlight).addClass('on');
+  $('.footing-wrapper').addClass(class_to_add);
 }
 
 function slide_to_foot() {
