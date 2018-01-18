@@ -141,9 +141,9 @@ body {
 
 .history {
   width: 268px;
-  height: 263px;
+  height: 252px;
   overflow: hidden;
-  margin: 0 0 0 25px;
+  margin: 10px 0 0 25px;
 }
 
 .wide-button {
@@ -458,7 +458,7 @@ body {
 
 .foot {
   font-size: 14px;
-  color: #484848;
+  color: #666;
   padding: 10px 0;
   text-align: center;
   position: relative;
