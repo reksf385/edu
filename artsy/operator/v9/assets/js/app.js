@@ -154,6 +154,7 @@ function set_number() {
       Bid.override_increment = true;
       Bid.override_increment_value = Bid.increment_value;
       set_current_ask(true);
+      initialize_footing();
     }
   } else {
     if (Bid.temp_ask !== '') {
@@ -369,17 +370,32 @@ function confirm_sale() {
 function initialize_footing() {
   var output = '';
 
-  for (i = 0; i < foot.length; i++) {
-    var side        = i % 2 == 0 ? 'left' : 'right',
-        value       = 'val' + foot[i],
-        max_marker  = Bid.online_max_bid == foot[i] ? 'max' : '',
-        high_marker = Bid.online_high_bid == foot[i] ? 'high' : '',
-        css_classes = side + ' ' + value + ' ' + max_marker + ' ' + high_marker;
+  if (Bid.override_increment) {
+    var foot_value = Bid.ask_value;
+    for (i = 0; i < foot.length; i++) {
+      var side        = i % 2 == 0 ? 'left' : 'right',
+          value       = 'val' + foot_value,
+          max_marker  = Bid.online_max_bid == foot_value ? 'max' : '',
+          high_marker = Bid.online_high_bid == foot_value ? 'high' : '',
+          css_classes = side + ' ' + value + ' ' + max_marker + ' ' + high_marker;
 
-    output += '<div class="foot ' + css_classes + '">' + foot[i].toLocaleString() + '</div>';
+      output += '<div class="foot ' + css_classes + '">' + foot_value.toLocaleString() + '</div>';
+      foot_value += Bid.increment_value;
+    }
+  } else {
+    for (i = 0; i < foot.length; i++) {
+      var side        = i % 2 == 0 ? 'left' : 'right',
+          value       = 'val' + foot[i],
+          max_marker  = Bid.online_max_bid == foot[i] ? 'max' : '',
+          high_marker = Bid.online_high_bid == foot[i] ? 'high' : '',
+          css_classes = side + ' ' + value + ' ' + max_marker + ' ' + high_marker;
+
+      output += '<div class="foot ' + css_classes + '">' + foot[i].toLocaleString() + '</div>';
+    }
   }
 
   $('.footing').html(output);
+  $('.footing').scrollTop();
   set_footing_highlights();
 }
 
@@ -397,8 +413,11 @@ function set_footing_highlights() {
 function slide_to_foot() {
   var foot_to_slide_to = '.val' + Bid.ask_value,
       current_offset   = $('.footing').scrollTop(),
-      y_distance       = $(foot_to_slide_to).position().top + current_offset - 69;
+      y_distance;
 
-  $('.footing').stop().animate({ 'scrollTop': y_distance});
-  $(foot_to_slide_to).prev().removeClass('on');
+  if ($(foot_to_slide_to)[0]) {
+    y_distance = $(foot_to_slide_to).position().top + current_offset - 69;
+    $('.footing').stop().animate({ 'scrollTop': y_distance});
+    $(foot_to_slide_to).prev().removeClass('on');
+  }
 }
