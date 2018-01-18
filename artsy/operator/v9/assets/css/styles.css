@@ -216,7 +216,6 @@ body {
 .square-key {
   position: absolute;
   width: 100%;
-  font-weight: bold;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -304,7 +303,6 @@ body {
   left: 20px;
   transform: translateY(-50%);
   font-size: 28px;
-  font-weight: bold;
 }
 
 .sell-button .button-value {
@@ -313,7 +311,6 @@ body {
   right: 20px;
   transform: translateY(-50%);
   font-size: 28px;
-  font-weight: bold;
 }
 
 .yellow { color: #F1AF1B; font-weight: bold; }
@@ -416,7 +413,7 @@ body {
   border-radius: 2px;
   display: inline-block;
   color: #000;
-  margin: 0 10px 5px 0;
+  margin: 0 0 3px 10px;
 }
 
 .marker.high { background: #F1CD39; }
@@ -425,10 +422,11 @@ body {
 .high-max-wrapper {
   position: absolute;
   top: 50%;
-  left: 300px;
+  right: 360px;
   font-size: 14px;
   color: #fff;
   transform: translateY(-50%);
+  text-align: right;
 }
 
 .high-max-wrapper .high-value,
@@ -460,10 +458,11 @@ body {
 
 .foot {
   font-size: 14px;
-  color: #666;
+  color: #484848;
   padding: 10px 0;
   text-align: center;
   position: relative;
+  transition: color 300ms ease;
 }
 
 .foot.right { padding-left: 100px; }

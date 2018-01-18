@@ -49,7 +49,7 @@ $(document).keyup(function(event) {
     pass_lot();
   } else if (event.keyCode == 73) {
     focus_increment();
-  } else if (event.keyCode == 79) {
+  } else if (event.keyCode == 65) {
     bid('online');
     active_state('.online');
   } else if (event.keyCode == 70) {
@@ -399,5 +399,6 @@ function slide_to_foot() {
       current_offset   = $('.footing').scrollTop(),
       y_distance       = $(foot_to_slide_to).position().top + current_offset - 69;
 
-  $('.footing').animate({ 'scrollTop': y_distance});
+  $('.footing').stop().animate({ 'scrollTop': y_distance});
+  $(foot_to_slide_to).prev().removeClass('on');
 }
