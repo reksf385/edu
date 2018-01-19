@@ -376,7 +376,7 @@ function initialize_footing() {
     for (i = 0; i < foot.length; i++) {
       var side        = i % 2 == 0 ? 'left' : 'right',
           value       = 'val' + foot_value,
-          max_marker  = Bid.online_max_bid == foot_value ? 'max' : '',
+          max_marker  = Bid.online_max_bid == foot_value ? 'max hide' : '',
           high_marker = Bid.online_high_bid == foot_value ? 'high' : '',
           css_classes = side + ' ' + value + ' ' + max_marker + ' ' + high_marker;
 
@@ -387,7 +387,7 @@ function initialize_footing() {
     for (i = 0; i < foot.length; i++) {
       var side        = i % 2 == 0 ? 'left' : 'right',
           value       = 'val' + foot[i],
-          max_marker  = Bid.online_max_bid == foot[i] ? 'max' : '',
+          max_marker  = Bid.online_max_bid == foot[i] ? 'max hide' : '',
           high_marker = Bid.online_high_bid == foot[i] ? 'high' : '',
           css_classes = side + ' ' + value + ' ' + max_marker + ' ' + high_marker;
 
@@ -415,6 +415,20 @@ function set_footing_highlights() {
   } else {
     $('.footing-wrapper').removeClass('left').removeClass('right');
     $('.foot').addClass('on');
+    $('.high-max-wrapper').addClass('hide');
+  }
+  reveal_max_bid();
+}
+
+function reveal_max_bid() {
+  var current_ask_index = $('.val' + Bid.ask_value).index(),
+      max_bid_index     = $('.val' + Bid.online_max_bid).index(),
+      distance_apart    = max_bid_index - current_ask_index;
+
+  if (distance_apart < 3) {
+    $('.foot.max').removeClass('hide');
+  } else {
+    $('.foot.max').addClass('hide');
   }
 }
 

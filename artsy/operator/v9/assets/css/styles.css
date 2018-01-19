@@ -474,8 +474,11 @@ ul, li {
   text-align: right;
 }
 
+.high-max-wrapper.hide { display: none; }
+
 .high-max-wrapper .high-value,
 .high-max-wrapper .max-value { position: relative; top: 1px; }
+.high-max-wrapper .max-value.hide { display: none; }
 
 .footing-wrapper {
   background: #333 url('../img/divider.svg') repeat-y 100px 0;
@@ -538,6 +541,8 @@ ul, li {
 
 .foot.high::after { content: 'High'; background: #F1CD39; }
 .foot.max::after { content: 'Max'; background: #F7625A; }
+
+.foot.max.hide::after { display: none; }
 
 .foot.on,
 .foot.high,
