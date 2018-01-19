@@ -49,7 +49,7 @@ body {
   display: inline-block;
 }
 
-.console.initializing .control-panel,
+.console.initializing .control-panel *,
 .console.initializing .current-increment {
   display: none;
 }
