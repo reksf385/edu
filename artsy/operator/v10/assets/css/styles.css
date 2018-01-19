@@ -49,7 +49,7 @@ body {
   display: inline-block;
 }
 
-.console.initializing .control-panel *,
+.console.initializing .control-panel div:not(.pass-lot),
 .console.initializing .current-increment {
   display: none;
 }
@@ -74,7 +74,7 @@ body {
   font-size: 14px;
   cursor: pointer;
   top: 50%;
-  right: 45px;
+  right: 40px;
   transform: translateY(-50%);
 }
 
@@ -365,10 +365,10 @@ body {
 .dropdown {
   width: 150px;
   position: absolute;
-  top: 25px;
+  top: 20px;
   right: -10px;
   display: none;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .dropdown::after {
@@ -376,8 +376,8 @@ body {
   width: 10px;
   height: 8px;
   position: absolute;
-  top: 3px;
-  right: 17px;
+  top: 8px;
+  right: 15px;
   background: url('../img/dropdown-pointer.svg') no-repeat;
 }
 
