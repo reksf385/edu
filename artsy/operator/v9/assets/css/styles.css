@@ -32,7 +32,15 @@ body {
 .wrapper {
   width: 884px;
   height: 500px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto;
+}
+
+.version-number {
+  font-size: 12px;
+  color: #666;
+  text-align: right;
+  width: 884px;
+  margin: 5px auto 0 auto;
 }
 
 .console {
@@ -425,7 +433,7 @@ ul, li {
 .alert-window {
   width: 280px;
   height: 150px;
-  border: 2px solid #000;
+  border: 2px solid #6E1FFF;
   position: absolute;
   z-index: 1000;
   top: 50%;
