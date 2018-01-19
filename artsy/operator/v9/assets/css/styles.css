@@ -283,15 +283,13 @@ body {
 }
 
 .floor { background: #0EDA83; }
-.online { background: #0EDA83 /*#6E1FFF*/; }
+.online { background: #6E1FFF; }
 .warning { background: #F1AF1B; }
 .last-call { background: #F7625A; }
-.undo { background: #ccc; }
+.pass-lot { background: #ccc; }
 
 .sell-button {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
+  position: relative;
   background: #000;
   color: #fff;
   cursor: pointer;
@@ -480,7 +478,7 @@ ul, li {
 .high-max-wrapper .max-value { position: relative; top: 1px; }
 
 .footing-wrapper {
-  background: #333 url('../img/foot-highlighter.svg') no-repeat 0 0;
+  background: #333 url('../img/divider.svg') repeat-y 100px 0;
   height: 100%;
   position: relative;
   width: 200px;
@@ -488,9 +486,9 @@ ul, li {
   margin-right: 2px;
 }
 
-.footing-wrapper.right {
-  background-position: 100px 0;
-}
+.footing-wrapper.left, .footing-wrapper.right { background: #333 url('../img/foot-highlighter.svg') no-repeat; }
+.footing-wrapper.left { background-position: 0 0; }
+.footing-wrapper.right { background-position: 100px 0; }
 
 .footing {
   overflow: scroll;

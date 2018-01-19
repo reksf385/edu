@@ -295,6 +295,7 @@ function check_for_online_bidders() {
   } else {
     disable_online_bidding();
   }
+  set_footing_highlights();
 }
 
 function enable_online_bidding() {
@@ -405,11 +406,16 @@ function display_high_and_max() {
 }
 
 function set_footing_highlights() {
-  var max_bid           = '.val' + Bid.online_max_bid,
-      foot_to_highlight = $(max_bid).hasClass('left') ? '.foot.left' : '.foot.right',
-      class_to_add      = $(max_bid).hasClass('left') ? 'left' : 'right';
-  $(foot_to_highlight).addClass('on');
-  $('.footing-wrapper').addClass(class_to_add);
+  if (Bid.online_max_bid >= Bid.ask_value) {
+    var max_bid           = '.val' + Bid.online_max_bid,
+        foot_to_highlight = $(max_bid).hasClass('left') ? '.foot.left' : '.foot.right',
+        class_to_add      = $(max_bid).hasClass('left') ? 'left' : 'right';
+    $(foot_to_highlight).addClass('on');
+    $('.footing-wrapper').addClass(class_to_add);
+  } else {
+    $('.footing-wrapper').removeClass('left').removeClass('right');
+    $('.foot').addClass('on');
+  }
 }
 
 function slide_to_foot() {
