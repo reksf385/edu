@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <title> </title>
+    <link href="assets/css/styles.css" media="all" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="assets/js/foot.js"></script>
+  </head>
+
+  <body>
+    <div class="utilities">
+      <img class="artsy-logo" src="assets/img/artsy-logo.svg" height="31" />
+      <img class="artwork" src="assets/img/artwork@2x.png" height="38" />
+
+      <div class="high-max-wrapper">
+        <div class="high"><span class="high-value"></span><span class="high marker">High</span></div>
+        <div class="max"><span class="max-value hide"></span><span class="max marker">Max</span></div>
+      </div>
+
+      <div class="header-button undo">Undo</div>
+
+      <div class="cog">
+        <img src="assets/img/cog.svg" />
+        <div class="dropdown">
+          <ul>
+            <li class="dropdown-item" data-keycode="67">Change lot</li>
+            <li class="dropdown-item" data-keycode="32">Pause auction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper">
+      <div class="console initializing">
+        <div class="overlay-wrapper">
+          <div class="alert-window confirm-sale">
+            Confirm sale
+            <div class="sale-amount">2,000</div>
+            Bidder: <span class="winning-bidder">#897239487</span>
+            <div class="action-buttons">
+              <span data-keycode="27" class="cancel small-button">Cancel</span>
+              <span data-keycode="13" class="ok small-button">Ok</span>
+            </div>
+          </div>
+          <div class="alert-window pass-lot">
+            Are you sure you want to pass this lot?
+            <div class="action-buttons">
+              <span data-keycode="27" class="cancel small-button">Cancel</span>
+              <span data-keycode="13" class="ok small-button">Ok</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footing-wrapper">
+          <img class="current-footing-marker" src="assets/img/marker.svg" />
+          <div class="footing"></div>
+        </div>
+
+        <div class="activity-wrapper">
+          <div data-keycode="48" class="wide-button current-ask typing">
+            <span class="button-description"></span>
+            <div class="action-buttons">
+              <span data-keycode="70" class="floor small-button">Floor</span>
+              <span data-keycode="27" class="cancel small-button">Cancel</span>
+              <span data-keycode="13" class="ok small-button">Ok</span>
+            </div>
+            <span class="button-value">0</span>
+          </div>
+
+          <div data-keycode="73" class="small-wide-button current-increment">
+            <div class="action-buttons">
+              <span data-keycode="27" class="cancel small-button">Cancel</span>
+              <span data-keycode="13" class="ok small-button">Ok</span>
+            </div>
+            Increment <span class="increment-wrapper">+<span class="increment"></span></span>
+          </div>
+
+          <div class="history"></div>
+        </div> <!-- activity-wrapper -->
+
+        <div class="control-panel">
+          <div data-keycode="70" class="square-button floor"><span class="square-key">Floor</span></div>
+          <div data-keycode="65" class="square-button online"><span class="square-key">Artsy</span></div>
+
+          <div data-keycode="87" class="square-button warning"><span class="square-key">Warning</span></div>
+          <div data-keycode="76" class="square-button last-call"><span class="square-key">Last call</span></div>
+          <div data-keycode="83" class="small-wide-button sell-button">
+            <span class="description">Sell</span>
+            <span class="button-value">&ndash;</span>
+          </div>
+          <div data-keycode="80" class="small-wide-button pass-lot"><span class="square-key">Pass lot</span></div>
+        </div>
+      </div> <!-- console -->
+    </div> <!-- wrapper -->
+    <div class="version-number">v2.0.1p</div>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
