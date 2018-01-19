@@ -47,7 +47,7 @@ $(document).keyup(function(event) {
     sell_lot();
   } else if (event.keyCode == 80) {
     pass_lot();
-  } else if (event.keyCode == 73) {
+  } else if (event.keyCode == 77) {
     focus_increment();
   } else if (event.keyCode == 65) {
     bid('online');
@@ -106,6 +106,8 @@ function focus_increment() {
   Bid.increment_focus = true;
   $('.small-wide-button.current-increment').addClass('typing');
   $('.current-increment .increment').html('0');
+  $('.small-button.toggle').removeClass('active');
+  $('.small-button.toggle.manual').addClass('active');
 }
 
 function update_number(value) {

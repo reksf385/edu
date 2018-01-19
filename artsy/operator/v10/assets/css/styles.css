@@ -98,7 +98,7 @@ body {
 
 .action-buttons {
   position: absolute;
-  bottom: 3px;
+  bottom: 2px;
   right: 0;
   font-size: 0;
   display: none;
@@ -108,7 +108,7 @@ body {
 
 .small-button {
   display: inline-block;
-  width: 60px;
+  width: 62px;
   height: 38px;
   cursor: pointer;
   font-size: 14px;
@@ -117,7 +117,7 @@ body {
   text-align: center;
   color: #fff !important;
   padding: 12px 0 0 0;
-  margin: 0 3px 0 0;
+  margin: 0 2px 0 0;
 }
 
 .small-button.cancel {
@@ -151,9 +151,9 @@ body {
 
 .history {
   width: 268px;
-  height: 240px;
+  height: 220px;
   overflow: hidden;
-  margin: 10px 0 0 25px;
+  margin: 7px 0 0 25px;
 }
 
 .wide-button {
@@ -198,9 +198,9 @@ body {
 .extra-space { margin-right: 170px; }
 
 .small-wide-button.current-increment {
-  height: 60px;
-  font-size: 14px;
-  padding: 23px 15px 0 15px;
+  height: 86px;
+  font-size: 0;
+  padding: 2px 0 0 2px;
   font-weight: bold;
   text-align: left;
 }
@@ -209,9 +209,18 @@ body {
   font-size: 0;
 }
 
+.increment-title {
+  font-size: 14px;
+  position: relative;
+  top: 13px;
+  left: 10px;
+}
+
+.typing .increment-title { display: none; }
+
 .increment-wrapper {
   position: absolute;
-  top: 23px;
+  top: 53px;
   right: 15px;
   font-size: 14px;
 }
@@ -266,12 +275,6 @@ body {
   right: 15px;
   text-align: right;
 }
-
-/*.typing.current-ask .button-value {
-  left: 15px;
-  right: auto;
-  text-align: left;
-}*/
 
 .line-item {
   font-size: 14px;
@@ -501,7 +504,7 @@ ul, li {
 
 .footing-wrapper.left, .footing-wrapper.right { background: #333 url('../img/foot-highlighter.svg') no-repeat; }
 .footing-wrapper.left { background-position: 0 0; }
-.footing-wrapper.right { background-position: 100px 0; }
+.footing-wrapper.right { background-position: 99px 0; }
 
 .footing {
   overflow: scroll;
@@ -558,3 +561,16 @@ ul, li {
 .foot.on,
 .foot.high,
 .foot.max { color: #fff; }
+
+
+.small-button.toggle {
+  width: 96px;
+  margin: 0 2px 0 0;
+  color: #666 !important;
+  background: #E5E5E5;
+}
+
+.small-button.toggle.active {
+  background: #000;
+  color: #fff !important;
+}
