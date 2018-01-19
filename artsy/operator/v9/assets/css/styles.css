@@ -31,7 +31,7 @@ body {
 
 .wrapper {
   width: 884px;
-  height: 513px;
+  height: 500px;
   margin: 0 auto 30px auto;
 }
 
@@ -141,7 +141,7 @@ body {
 
 .history {
   width: 268px;
-  height: 252px;
+  height: 240px;
   overflow: hidden;
   margin: 10px 0 0 25px;
 }
@@ -508,6 +508,7 @@ ul, li {
 .foot {
   font-size: 14px;
   color: #666;
+  font-weight: bold;
   padding: 10px 0;
   text-align: center;
   position: relative;
