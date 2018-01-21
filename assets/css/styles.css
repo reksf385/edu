@@ -6,7 +6,7 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  color: #3C5AC3;
+  color: #29439F;
 }
 
 .wrapper {
@@ -30,7 +30,7 @@ body {
 }
 
 .quote {
-  border-left: 10px solid #3C5AC3;
+  border-left: 10px solid #29439F;
   padding: 0 0 0 30px;
 }
 
@@ -41,7 +41,7 @@ body {
   display: inline-block;
   font-size: 15px;
   line-height: 1.6em;
-  color: #000;
+  /*color: #000;*/
   font-family: 'Roboto Mono', monospace;
   background: #ffa;
 }
@@ -74,9 +74,9 @@ body {
 
 
 a {
-  color: #000;
+  color: #29439F;
   text-decoration: none;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #29439F;
 }
 
 a:hover { background: rgba(255,255,255,.5); }
