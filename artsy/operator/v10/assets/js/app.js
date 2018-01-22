@@ -17,7 +17,8 @@ var Bid = {
       random_key:               Math.floor(Math.random() * (foot.length - 5)),
       online_high_bid:          0,
       online_max_bid:           0,
-      increment_strategy:       '.default'
+      increment_strategy:       '.default',
+      current_winner:           ''
     };
 
 Bid.online_high_bid = foot[Bid.random_key];
@@ -249,6 +250,8 @@ function bid(source) {
       fixed_number    = $('.typing')[0] == undefined ? true : false,
       set_with_floor  = source == 'Floor' ? true : false;
 
+  Bid.current_winner = source;
+
   if (fixed_number && submittable_bid || set_with_floor) {
     set_number();
     set_sell_at();
@@ -311,16 +314,24 @@ function active_state(class_name) {
 }
 
 function check_for_online_bidders() {
-  if (Bid.online_max_bid >= Bid.ask_value) {
-    enable_online_bidding();
-  } else {
+  console.log(Bid.current_winner);
+  if (Bid.current_winner == 'online' || Bid.online_max_bid < Bid.ask_value) {
     disable_online_bidding();
+  } else {
+    enable_online_bidding();
   }
   set_footing_highlights();
 }
 
 function enable_online_bidding() {
-  $('.square-button.online').removeClass('disabled');
+  if ($('.square-button.online').hasClass('disabled')) {
+    $('.square-button.online').addClass('animating');
+
+    setTimeout(function() {
+      $('.square-button.online').removeClass('disabled');
+      $('.square-button.online').removeClass('animating');
+    }, 375);
+  }
 }
 
 function disable_online_bidding() {

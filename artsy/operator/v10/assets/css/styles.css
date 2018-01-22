@@ -346,6 +346,7 @@ body {
   color: #ccc;
 }
 
+
 .utilities {
   position: relative;
   width: 880px;
@@ -584,4 +585,16 @@ ul, li {
 .small-button.toggle.active {
   background: #000;
   color: #fff !important;
+}
+
+
+.animating {
+  animation: 125ms blink step-end infinite;
+  color: #000 !important;
+  border-color: #000 !important;
+}
+
+@keyframes blink {
+  from, to { background: #000; }
+  50% { background: #6E1FFF; }
 }
