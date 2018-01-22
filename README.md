@@ -2,7 +2,7 @@
 
 ---
 
-### Create GitHub account and repository
+### Create a GitHub account and repository
 1. Sign up for a [GitHub account](https://github.com). Note: use your newschool username.
 2. Create a repository called `<YOUR USERNAME>.github.io`, ie, `briansw.github.com`
 
@@ -24,7 +24,7 @@
 1. `git config --global user.name "<YOUR NAME>"`
 2. git config --global user.email `"<YOUR EMAIL ADDRESS>"`
 
-#### Download and install Software
+#### Download and install software
 1. [Sublime Text](http://www.sublimetext.com/3)
 2. [Sketch](https://www.sketchapp.com/)
 
