@@ -194,13 +194,16 @@ function increment_policy_value() {
   if (Bid.increment_strategy == '.manual') {
     return Bid.override_increment_value;
   } else if (Bid.increment_strategy == '.two-five-eight') {
+    alert(Bid.sell_string)
     var value = Bid.sell_string.slice(-3).slice(0,1);
-    if (value < 5) {
+    if (value == 0) {
       return 200;
-    } else if (value < 8) {
-      return 500;
-    } else if (value < 9) {
-      return 800;
+    } else if (value == 2) {
+      return 300;
+    } else if (value == 5) {
+      return 300;
+    } else if (value == 8) {
+      return 200;
     }
   } else if (Bid.ask_value < 1000) {
     return 50;
