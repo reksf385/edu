@@ -194,7 +194,6 @@ function increment_policy_value() {
   if (Bid.increment_strategy == '.manual') {
     return Bid.override_increment_value;
   } else if (Bid.increment_strategy == '.two-five-eight') {
-    alert(Bid.sell_string)
     var value = Bid.sell_string.slice(-3).slice(0,1);
     if (value == 0) {
       return 200;
