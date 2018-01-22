@@ -16,7 +16,8 @@ var Bid = {
       temp_increment:           '',
       random_key:               Math.floor(Math.random() * (foot.length - 5)),
       online_high_bid:          0,
-      online_max_bid:           0
+      online_max_bid:           0,
+      increment_strategy:       '.default'
     };
 
 Bid.online_high_bid = foot[Bid.random_key];
@@ -27,7 +28,7 @@ reset_number();
 set_increment();
 display_high_and_max();
 
-$('.square-button, .small-button, .small-wide-button, .wide-button, .dropdown-item').click(function(event) {
+$('.square-button, .small-button, .small-wide-button, .wide-button, .dropdown-item, .toggle').click(function(event) {
   event.stopPropagation();
     var event    = $.Event('keyup'),
         key_code = $(this).data('keycode');
@@ -49,6 +50,10 @@ $(document).keyup(function(event) {
     pass_lot();
   } else if (event.keyCode == 77) {
     focus_increment();
+  } else if (event.keyCode == 68) {
+    toggle_increment_strategy('.toggle.default', 'default');
+  } else if (event.keyCode == 84) {
+    toggle_increment_strategy('.toggle.two-five-eight', '.two-five-eight');
   } else if (event.keyCode == 65) {
     bid('online');
     active_state('.online');
@@ -106,8 +111,7 @@ function focus_increment() {
   Bid.increment_focus = true;
   $('.small-wide-button.current-increment').addClass('typing');
   $('.current-increment .increment').html('0');
-  $('.small-button.toggle').removeClass('active');
-  $('.small-button.toggle.manual').addClass('active');
+  toggle_increment_strategy('.toggle.manual', '.manual');
 }
 
 function update_number(value) {
@@ -132,6 +136,7 @@ function reset_number() {
     Bid.temp_increment = '';
     $('.current-increment .increment').html(Bid.increment_string);
     $('.current-increment').removeClass('typing');
+    toggle_increment_strategy(Bid.prev_toggle, 'default');
     Bid.increment_focus = false;
     typing = false;
   } else if (Bid.lot_initialized) {
@@ -153,9 +158,9 @@ function set_number() {
       Bid.temp_increment = '';
       $('.current-increment').removeClass('typing');
       Bid.increment_focus = false;
-      Bid.override_increment = true;
+      Bid.increment_strategy = '.manual';
       Bid.override_increment_value = Bid.increment_value;
-      set_current_ask(true);
+      set_current_ask('update increment');
       initialize_footing();
     }
   } else {
@@ -186,8 +191,17 @@ function find_increment_value() {
 }
 
 function increment_policy_value() {
-  if (Bid.override_increment) {
+  if (Bid.increment_strategy == '.manual') {
     return Bid.override_increment_value;
+  } else if (Bid.increment_strategy == '.two-five-eight') {
+    var value = Bid.sell_string.slice(-3).slice(0,1);
+    if (value < 5) {
+      return 200;
+    } else if (value < 8) {
+      return 500;
+    } else if (value < 9) {
+      return 800;
+    }
   } else if (Bid.ask_value < 1000) {
     return 50;
   } else if (Bid.ask_value < 2000) {
@@ -244,12 +258,15 @@ function bid(source) {
   }
 }
 
-function set_current_ask(updating_increment) {
-  if (updating_increment) {
+function set_current_ask(status) {
+  if (status == 'update increment') {
     if (Bid.sell_value != 0) {
       Bid.ask_value  = Bid.sell_value + Bid.increment_value;
       Bid.ask_string = Bid.ask_value.toLocaleString();
     }
+  } else if (status == 'reset') {
+    Bid.ask_value  = Bid.sell_value + increment_policy_value();
+    Bid.ask_string = Bid.ask_value.toLocaleString();
   } else {
     Bid.ask_value  = Bid.ask_value + Bid.increment_value;
     Bid.ask_string = Bid.ask_value.toLocaleString();
@@ -373,7 +390,7 @@ function confirm_sale() {
 function initialize_footing() {
   var output = '';
 
-  if (Bid.override_increment) {
+  if (Bid.increment_strategy == '.manual') {
     var foot_value = Bid.ask_value;
     for (i = 0; i < foot.length; i++) {
       var side        = i % 2 == 0 ? 'left' : 'right',
@@ -384,6 +401,16 @@ function initialize_footing() {
 
       output += '<div class="foot ' + css_classes + '">' + foot_value.toLocaleString() + '</div>';
       foot_value += Bid.increment_value;
+    }
+  } else if (Bid.increment_strategy == '.two-five-eight') {
+    for (i = 0; i < foot_258.length; i++) {
+      var side        = i % 2 == 0 ? 'left' : 'right',
+          value       = 'val' + foot_258[i],
+          max_marker  = Bid.online_max_bid == foot_258[i] ? 'max hide' : '',
+          high_marker = Bid.online_high_bid == foot_258[i] ? 'high' : '',
+          css_classes = side + ' ' + value + ' ' + max_marker + ' ' + high_marker;
+
+      output += '<div class="foot ' + css_classes + '">' + foot_258[i].toLocaleString() + '</div>';
     }
   } else {
     for (i = 0; i < foot.length; i++) {
@@ -443,5 +470,23 @@ function slide_to_foot() {
     y_distance = $(foot_to_slide_to).position().top + current_offset - 69;
     $('.footing').stop().animate({ 'scrollTop': y_distance});
     $(foot_to_slide_to).prev().removeClass('on');
+  }
+}
+
+function toggle_increment_strategy(toggle_to_activate, increment_strategy) {
+  Bid.prev_toggle = $('.toggle.active').data('name');
+  Bid.current_toggle = toggle_to_activate;
+  Bid.increment_strategy = Bid.current_toggle.replace(/\.toggle/g, '');
+
+  $('.small-button.toggle').removeClass('active');
+  $(toggle_to_activate).addClass('active');
+
+  if (increment_strategy != '.manual' && $('.current-increment').not('typing')) {
+    set_current_ask('reset');
+    set_increment();
+    initialize_footing();
+    set_footing_highlights();
+    reveal_max_bid();
+    slide_to_foot();
   }
 }
