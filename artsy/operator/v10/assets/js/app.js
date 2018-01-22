@@ -265,7 +265,7 @@ function set_current_ask(status) {
       Bid.ask_string = Bid.ask_value.toLocaleString();
     }
   } else if (status == 'reset') {
-    Bid.ask_value  = Bid.sell_value + increment_policy_value();
+    Bid.ask_value  = Bid.sell_value + increment_policy_value(); // increment_policy_value();
     Bid.ask_string = Bid.ask_value.toLocaleString();
   } else {
     Bid.ask_value  = Bid.ask_value + Bid.increment_value;
@@ -481,12 +481,15 @@ function toggle_increment_strategy(toggle_to_activate, increment_strategy) {
   $('.small-button.toggle').removeClass('active');
   $(toggle_to_activate).addClass('active');
 
-  if (increment_strategy != '.manual' && $('.current-increment').not('typing')) {
+  if (increment_strategy != 'manual' && !$('.current-increment').hasClass('typing')) {
     set_current_ask('reset');
     set_increment();
     initialize_footing();
     set_footing_highlights();
     reveal_max_bid();
     slide_to_foot();
+  } else if (increment_strategy != '.manual') {
+    $('.current-increment .increment').html(Bid.increment_value);
+    $('.current-increment').removeClass('typing');
   }
 }
