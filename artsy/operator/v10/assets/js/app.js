@@ -489,6 +489,7 @@ function toggle_increment_strategy(toggle_to_activate, increment_strategy) {
     reveal_max_bid();
     slide_to_foot();
   } else if (increment_strategy != '.manual') {
+    Bid.increment_focus = false;
     $('.current-increment .increment').html(Bid.increment_value);
     $('.current-increment').removeClass('typing');
   }
