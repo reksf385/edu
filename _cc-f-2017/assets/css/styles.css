@@ -1,0 +1,69 @@
+* { box-sizing: border-box; }
+div { vertical-align: top; }
+
+body {
+  font-size: 0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #29439F;
+}
+
+.wrapper {
+  width: 1250px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.c {
+  margin: 0 20px 60px 20px;
+  font-size: 18px;
+  line-height: 1.6em;
+  display: inline-block;
+}
+
+.c1 { width: calc(25% - 40px); }
+.c2 { width: calc(50% - 40px); }
+.c4 { width: calc(100% - 40px); }
+
+.quote {
+  border-left: 10px solid #29439F;
+  padding: 0 0 0 30px;
+}
+
+.menu {
+  font-size: 15px;
+  padding: 30px;
+  font-family: 'Roboto Mono', monospace;
+  background: #ffa;
+}
+
+.labs { background: #C2BDB2; }
+.students { background: #A9D7AE; }
+.resources { background: #FFE2AD; }
+.reminder { background: #FCD9CA; }
+
+.menu h2 {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0 0 15px 0;
+  padding: 0;
+}
+
+a {
+  color: #29439F;
+  text-decoration: none;
+  border-bottom: 1px solid #29439F;
+}
+
+a:hover { background: rgba(255,255,255,.5); }
+
+ul, li { margin: 0 0 0 10px; padding: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+p { max-width: 775px; }
