@@ -179,7 +179,7 @@ function set_number() {
     }
   }
   check_for_online_bidders();
-  slide_to_foot();
+  slide_to_foot(false);
   typing = false;
 }
 
@@ -259,7 +259,7 @@ function bid(source) {
     set_current_ask(false);
     add_to_history(source);
     check_for_online_bidders();
-    slide_to_foot();
+    slide_to_foot(true);
   }
 }
 
@@ -474,14 +474,18 @@ function reveal_max_bid() {
   }
 }
 
-function slide_to_foot() {
+function slide_to_foot(should_animate) {
   var foot_to_slide_to = '.val' + Bid.ask_value,
       current_offset   = $('.footing').scrollTop(),
       y_distance;
 
   if ($(foot_to_slide_to)[0]) {
     y_distance = $(foot_to_slide_to).position().top + current_offset - 69;
-    $('.footing').stop().animate({ 'scrollTop': y_distance});
+    if (should_animate) {
+      $('.footing').stop().animate({ 'scrollTop': y_distance});
+    } else {
+      $('.footing').stop().scrollTop(y_distance);
+    }
     $(foot_to_slide_to).prev().removeClass('on');
   }
 }
@@ -500,7 +504,7 @@ function toggle_increment_strategy(toggle_to_activate, increment_strategy) {
     initialize_footing();
     set_footing_highlights();
     reveal_max_bid();
-    slide_to_foot();
+    slide_to_foot(false);
   } else if (increment_strategy != '.manual') {
     Bid.increment_focus = false;
     $('.current-increment .increment').html(Bid.increment_value);
