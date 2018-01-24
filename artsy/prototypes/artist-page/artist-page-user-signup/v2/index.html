@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        text-align: center;
+        z-index: 100;
+      }
+
+      .background {
+        height: 2472px;
+        width: 1426px;
+        background: url('artist-page.jpg') no-repeat center 0;
+        margin: 0 auto;
+        transition: all, 300ms, ease;
+        transform-origin: top center;
+      }
+
+      .background.disabled {
+        transform: scale(.93, .93);
+        opacity: .75;
+      }
+
+      .signup-modal {
+        position: fixed;
+        z-index: 100;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 100px;
+        width: calc(100% - 20px);
+        background: #FDEFD1;
+        transition: all, 300ms, ease;
+      }
+
+      .signup-modal.alt {
+        background: #000;
+      }
+
+      .signup-modal.intro {
+        bottom: -150px;
+        width: 768px;
+      }
+
+      .signup-modal.takeover {
+        height: calc(100%);
+        width: calc(100%);
+        bottom: 0;
+      }
+
+      .prompt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: opacity, 150ms, ease;
+        cursor: pointer;
+      }
+
+      .prompt.init {
+        transition: all, 600ms, ease;
+      }
+
+      .prompt.intro {
+        top: 70%;
+        opacity: 0;
+      }
+
+      .hide {
+        opacity: 0;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <img src="nav.jpg" />
+    </div>
+    <div class="background"></div>
+    <div class="signup-modal intro">
+      <img class="prompt intro init" src="small-signup.png" data-alt="small-signup-alt.png" />
+      <img class="prompt hide" src="large-signup.jpg" data-alt="large-signup-alt.jpg" />
+    </div>
+    <script>
+      var triggered = false;
+
+      var intro = setTimeout(function() {
+        $('.signup-modal').removeClass('intro');
+        $('.prompt').removeClass('intro');
+      }, 10);
+
+      $('body').keypress(function(event) {
+        if (event.which == 32) { // spacebar
+           event.preventDefault();
+           $('.signup-modal').toggleClass('alt');
+           $('.prompt').each(function() {
+            var src = $(this).attr('src');
+            $(this).attr('src', $(this).data('alt'));
+            $(this).data('alt', src);
+          });
+        }
+      });
+
+
+      $(window).scroll(function () {
+        if ($(this).scrollTop() >= 1335 && triggered == false) {
+          toggle_prompt();
+        }
+      });
+
+      $('.prompt').click(function() {
+        toggle_prompt();
+      });
+
+      function toggle_prompt() {
+        triggered = true;
+        $('.signup-modal').toggleClass('takeover');
+        $('.prompt').toggleClass('hide').removeClass('init');
+        $('.background').toggleClass('disabled');
+      }
+    </script>
+
+  </body>
+</html>

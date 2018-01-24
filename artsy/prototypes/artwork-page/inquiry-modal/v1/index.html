@@ -1,0 +1,145 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+    html, body { margin: 0; padding: 0; }
+    .header { position: fixed; z-index: 100; background: #fff; top: 0; left: 0; border-bottom: 1px solid #e5e5e5; height: 52px; width: 100%; }
+    .header .left { position: absolute; top: 10px; left: 10px; z-index: 5; }
+    .header .right { position: absolute; top: 4px; right: 10px; z-index: 5; }
+    .header .middle { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); z-index: 1; }
+
+    .content {
+      width: 1425px;
+      margin: 0 auto;
+      padding-top: 50px;
+    }
+
+    .void {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,.75);
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      transition: all, 300ms, ease;
+    }
+
+    .void.hide { z-index: -1; }
+
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      z-index: 1001;
+      width: 567px;
+      height: 547px;
+      overflow: hidden;
+    }
+
+/*    html {
+      backface-visibility: hidden;
+-webkit-font-smoothing: subpixel-antialiased;
+    }
+*/
+    .contact-gallery {
+      display: block;
+      position: absolute;
+      top: 635px;
+      left: 1022px;
+      width: 280px;
+      height: 46px;
+      background: transparent;
+    }
+
+    .next-button {
+      display: block;
+      bottom: 53px;
+      left: 30px;
+      width: 505px;
+      height: 43px;
+      background: transparent;
+      position: absolute;
+    }
+
+    .card-holder img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transition: all, 300ms, ease;
+    }
+
+    .signup-card.hide {
+      bottom: -430px;
+      opacity: .3;
+    }
+
+
+    .content.fixed {
+      margin-top: 50px;
+    }
+
+    .hide { opacity: 0; }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="void hide">
+      <div class="modal">
+        <div class="card-holder">
+          <img class="inquire" src="img/inquire-card.jpg" />
+          <img class="signup-card hide" src="img/signup-card.jpg" />
+          <a href="#" class="next-button"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="left"><img src="img/left.png" height="32" /></div>
+      <div class="middle"><img src="img/center.png" height="24" /></div>
+      <div class="right"><img src="img/right.png" height="44" /></div>
+    </div>
+    <div class="content">
+      <img src="img/p0.jpg" />
+      <a href="#" class="contact-gallery"></a>
+    </div>
+
+
+    <script>
+      var clicks = 0;
+      $('.contact-gallery').click(function(e) {
+        e.preventDefault();
+        $('.void').toggleClass('hide');
+      });
+      $('.next-button').click(function(e) {
+        e.preventDefault();
+        clicks += 1;
+        if (clicks == 1) {
+          $('.signup-card').toggleClass('hide');
+          window.setTimeout(toggle_inquire_card, 1000);
+        } else if (clicks == 2) {
+          $('.signup-card').toggleClass('hide');
+        } else {
+          $('.inquire').attr('src', 'img/success.jpg');
+        }
+      });
+
+      function toggle_inquire_card() {
+        $('.inquire').attr('src', 'img/inquire-card-loggedin.jpg');
+      }
+
+      $('body').keydown(function(event) {
+        if (event.which == 27) {
+           event.preventDefault();
+           clicks = 0;
+           $('.void').toggleClass('hide');
+           $('.inquire').attr('src', 'img/inquire-card.jpg');
+           $('.signup-card').addClass('hide');
+        }
+      });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .background {
+        height: 1003px;
+        width: 100%;
+        background: url('1.jpg') no-repeat center 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="background">
+    </div>
+    <script>
+      var current_page = 1;
+      $('.background').click(function(){
+        current_page = current_page > 2 ? 1 : current_page += 1;
+        page_name = current_page + '.jpg';
+        $('html, body').scrollTop(0);
+        $(this).css({ 'background-image': "url(" + page_name + ")" });
+      });
+      $('.pill-wrapper').click(function() {
+        $('html, body').animate({ scrollTop: 630 });
+      });
+    </script>
+
+  </body>
+</html>

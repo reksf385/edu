@@ -1,0 +1,121 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+    html, body { margin: 0; padding: 0; }
+    .header { position: fixed; z-index: 100; background: #fff; top: 0; left: 0; border-bottom: 1px solid #e5e5e5; height: 52px; width: 100%; }
+    .header .left { position: absolute; top: 10px; left: 10px; z-index: 5; }
+    .header .right { position: absolute; top: 4px; right: 10px; z-index: 5; }
+    .header .middle { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); z-index: 1; }
+
+    .subhead {
+      margin-top: 52px;
+      border-bottom: 1px solid #e5e5e5;
+      height: 134px;
+      position: relative;
+    }
+    .subhead .left { padding: 28px 0 0 30px; }
+    .subhead .right { position: absolute; top: 30px; right: 0; font-size: 0; }
+    .arrow-right { margin-right: 30px; }
+    .arrow-left { margin-right: 12px; }
+
+    .arrow { cursor: pointer; }
+
+    .subhead.fitted {
+      width: 1150px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .subhead.fitted .left { padding-left: 0; }
+    .subhead.fitted .arrow-right { margin-right: 0; }
+
+    .content {
+      width: 1425px;
+      margin: 0 auto;
+    }
+
+    .content.fixed {
+      margin-top: 50px;
+    }
+
+    .subhead.fixed {
+      border-top: 1px solid #e5e5e5;
+      background: #fff;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      position: fixed;
+    }
+
+    .thumbs, .installs { display: inline-block; font-size: 15px; color: #666666; }
+    .counter { margin-right: 30px; position: relative; top: -33px; }
+
+    .thumb.square { width: 80px; }
+
+    .hide { display: none; }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="left"><img src="img/left.png" height="32" /></div>
+      <div class="middle"><img src="img/center.png" height="24" /></div>
+      <div class="right"><img src="img/right.png" height="44" /></div>
+    </div>
+    <div class="subhead">
+      <div class="left">
+        <img src="img/show.jpg" height="80" />
+      </div>
+      <div class="right">
+        <div class="thumbs">
+          <span class="counter">
+            Viewing <span class="index">1</span> of 32
+          </span>
+          <img class="arrow arrow-left" src="img/arrow-left.jpg" height="80" />
+          <img class="arrow arrow-right" src="img/arrow-right.jpg" height="80" />
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <img src="img/p0.jpg" />
+    </div>
+
+
+    <script>
+      var current_page = 0,
+          max_page     = 4;
+
+      $('.arrow, .thumb').click(function() {
+        set_current_page_num(this);
+        change_content();
+      });
+
+      function set_current_page_num(context) {
+        if ($(context).hasClass('arrow-right')) {
+          current_page = (current_page + 1) > 4 ? 0 : current_page + 1;
+        } else {
+          current_page = current_page - 1 < 0 ? max_page : current_page - 1;
+        }
+        $('.index').html(current_page + 1);
+      }
+
+      function change_content() {
+        var content_img = 'img/p' + current_page + '.jpg'
+        $('.content img').attr('src', content_img);
+        $(window).scrollTop(0);
+      }
+
+      $('body').keypress(function(event) {
+        if (event.which == 32) {
+           event.preventDefault();
+           $('.subhead').toggleClass('fitted');
+        }
+      });
+    </script>
+
+  </body>
+</html>

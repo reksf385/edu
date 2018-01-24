@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      .background {
+        height: 2472px;
+        width: 1426px;
+        background: url('artist-page.jpg') no-repeat center 0;
+        margin: 0 auto;
+      }
+
+      .void {
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.5);
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        opacity: 0;
+        -webkit-transition: all 200ms ease;
+      }
+
+      .void.show {
+        bottom: 0;
+        opacity: 1;
+      }
+
+      .popup {
+        width: 940px;
+        height: 423px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="void">
+      <a href="signup.html"><img class="popup" src="popup.jpg" /></a>
+    </div>
+    <div class="background"></div>
+    <script>
+      var timer = setTimeout(function(){
+        $('.void').addClass('show');
+      }, 3000);
+    </script>
+
+  </body>
+</html>

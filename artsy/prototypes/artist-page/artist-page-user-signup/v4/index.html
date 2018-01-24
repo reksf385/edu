@@ -1,0 +1,174 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        text-align: center;
+        z-index: 100;
+        background: #fff;
+      }
+
+      .background {
+        height: 2472px;
+        width: 1426px;
+        background: url('artist-page.jpg') no-repeat center 0;
+        margin: 0 auto;
+        transition: all, 300ms, ease;
+        transform-origin: top center;
+      }
+
+      .void-wrapper {
+        width: 100%;
+        height: 100%;
+        padding-top: 30px;
+        background: #fff;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        opacity: 1;
+        transition: all, 500ms, ease;
+      }
+
+      .void,
+      .white-void {
+        background: repeat top center #fff;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 30px;
+        left: 0;
+        transition: all, 300ms, ease;
+      }
+
+      .void.w0 { background-image: url('wall-0.jpg') }
+      .void.w1 { background-image: url('wall-1.jpg') }
+      .void.w2 { background: url('wall-2.jpg') no-repeat center center #fff; background-size: cover; top: 0; }
+      .void.w3 { background: url('wall-2.jpg') no-repeat center center #fff; background-size: cover; top: 0; -webkit-filter: blur(20px); }
+
+      .prompt {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: opacity, 150ms, ease;
+        transition: all, 500ms, ease;
+        z-index: 500;
+        width: 469px;
+        height: 500px;
+      }
+
+      .prompt.init {
+        transition: all, 600ms, ease;
+      }
+
+      .prompt.intro {
+        opacity: 0;
+        top: 55%;
+      }
+
+      .prompt-img {
+        position: absolute;
+      }
+
+      .signup {
+        display: block;
+        width: 375px;
+        height: 44px;
+        background: transparent;
+        position: absolute;
+        top: 313px;
+        left: 30px;
+      }
+
+      .close-button,
+      .registered-close-button {
+        position: absolute;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+      }
+
+      .registered-close-button {
+        top: 20px;
+        right: 20px;
+      }
+
+      .close-button {
+        top: 18px;
+        right: 50px;
+      }
+
+      .hide {
+        opacity: 0;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <img class="nav-img" src="nav.jpg" />
+    </div>
+    <div class="void-wrapper intro">
+      <div class="void bgimg w0"></div>
+      <div class="white-void hide"></div>
+        <img class="registered-close-button hide" src="close.jpg" />
+        <div class="prompt intro">
+        <img class="prompt-img" src="prompt.jpg" />
+        <img class="prompt-img hide" src="follow-prompt.jpg" />
+        <a href="#" class="close-button"></a>
+        <a href="#" class="signup"></a>
+      </div>
+    </div>
+    <div class="background"></div>
+    <script>
+      var intro = setTimeout(function() {
+        $('.void-wrapper').removeClass('intro');
+        $('.prompt').removeClass('intro');
+      }, 10);
+
+      $('.close-button').click(function() {
+        $('.void-wrapper').addClass('hide');
+        $('.prompt').addClass('hide');
+      });
+
+      $('.registered-close-button').click(function() {
+        $('.void-wrapper').addClass('hide');
+        $('.prompt').addClass('hide');
+        $('.nav-img').attr('src', 'signedup-nav.jpg');
+      });
+
+      $('.signup').click(function(e) {
+        e.stopPropagation();
+        $('.white-void').removeClass('hide');
+        $('.prompt-img').toggleClass('hide');
+        $('.registered-close-button').removeClass('hide');
+      });
+
+      var count = 0;
+      $('body').keypress(function(event) {
+        if (event.which == 32) { // spacebar
+           event.preventDefault();
+           count = count == 3 ? 0 : count += 1;
+           $('.void').attr('class', 'void w' + count);
+           $('.prompt').each(function() {
+            var src = $(this).attr('src');
+            $(this).attr('src', $(this).data('alt'));
+            $(this).data('alt', src);
+          });
+        }
+      });
+    </script>
+
+  </body>
+</html>

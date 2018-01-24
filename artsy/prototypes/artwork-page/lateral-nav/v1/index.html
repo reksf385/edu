@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <style>
+    html, body { margin: 0; padding: 0; }
+    .header { position: fixed; z-index: 100; background: #fff; top: 0; left: 0; border-bottom: 1px solid #e5e5e5; height: 52px; width: 100%; }
+    .header .left { position: absolute; top: 10px; left: 10px; z-index: 5; }
+    .header .right { position: absolute; top: 4px; right: 10px; z-index: 5; }
+    .header .middle { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); z-index: 1; }
+
+    .subhead {
+      margin-top: 52px;
+      border-bottom: 1px solid #e5e5e5;
+      height: 134px;
+      position: relative;
+    }
+    .subhead .left { padding: 28px 0 0 30px; }
+    .subhead .right { position: absolute; top: 30px; right: 0; font-size: 0; }
+    .subhead .right img { margin-right: 30px; cursor: pointer; }
+
+    .content {
+      width: 1425px;
+      margin: 0 auto;
+    }
+
+    .content.fixed {
+      margin-top: 50px;
+    }
+
+    .subhead.fixed {
+      border-top: 1px solid #e5e5e5;
+      background: #fff;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      position: fixed;
+    }
+
+    .thumbs, .installs { display: inline-block; }
+
+    .thumb.square { width: 80px; }
+
+    .floated.arrow { border: 3px solid transparent; position: fixed; top: 50%; transform: translateY(-50%); opacity: .1; cursor: pointer; }
+    .floated.arrow:hover { opacity: 1; border-color: #000; }
+    .floated.arrow-left { left: 30px; }
+    .floated.arrow-right { right: 30px; }
+
+    .sticky.arrow { position: fixed; top: 50%; transform: translateY(-50%); cursor: pointer; }
+    .sticky.arrow-left { left: -1px; }
+    .sticky.arrow-right { right: -1px; }
+
+    .hide { display: none; }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="left"><img src="img/left.png" height="32" /></div>
+      <div class="middle"><img src="img/center.png" height="24" /></div>
+      <div class="right"><img src="img/right.png" height="44" /></div>
+    </div>
+    <div class="subhead">
+      <div class="left">
+        <img src="img/show.jpg" height="80" />
+      </div>
+      <div class="right">
+        <div class="thumbs">
+          <img class="hide current thumb" src="img/0.jpg" height="80" />
+          <img class="thumb" data-target="1" src="img/1.jpg" height="80" />
+          <img class="thumb" data-target="2" src="img/2.jpg" height="80" />
+          <img class="thumb" data-target="3" src="img/3.jpg" height="80" />
+        </div>
+        <div class="installs hide">
+          <img class="install" src="img/install-1.jpg" height="80" />
+          <img class="install" src="img/install-2.jpg" height="80" />
+        </div>
+        <img src="img/32works.jpg" height="80" />
+      </div>
+    </div>
+
+    <img class="hide floated arrow arrow-left" src="img/arrow-left.jpg" height="56" />
+    <img class="hide floated arrow arrow-right" src="img/arrow-right.png" height="56" />
+
+    <img class="sticky arrow arrow-left" src="img/sticky-arrow-left.png" height="62" />
+    <img class="sticky arrow arrow-right" src="img/sticky-arrow-right.png" height="62" />
+
+    <div class="content">
+      <img src="img/p0.jpg" />
+    </div>
+
+
+    <script>
+      var current_page = 0,
+          max_page     = 4;
+
+      $('.arrow, .thumb').click(function() {
+        set_current_page_num(this);
+        change_content();
+        change_subheader();
+      });
+
+      function set_current_page_num(context) {
+        if ($(context).hasClass('thumb')) {
+          target_page = Math.abs($(context).attr('data-target'));
+          current_page = target_page > max_page ? 0 : target_page;
+        } else {
+          if ($(context).hasClass('arrow-right')) {
+            current_page = (current_page + 1) > 4 ? 0 : current_page + 1;
+          } else {
+            current_page = current_page - 1 < 0 ? max_page : current_page - 1;
+          }
+        }
+      }
+
+      function change_content() {
+        var content_img = 'img/p' + current_page + '.jpg'
+        $('.content img').attr('src', content_img);
+        $(window).scrollTop(0);
+      }
+
+      function change_subheader() {
+        var artwork_index = current_page;
+        $('.subhead .right img.thumb').not('.current').each(function(index, element) {
+          artwork_index += 1;
+          var img = 'img/' + artwork_index + '.jpg';
+          $(this).attr('src', img).attr('data-target', artwork_index);
+        });
+        $('.thumb.current').attr('src', 'img/' + current_page + '.jpg');
+      }
+
+      $('body').keypress(function(event) {
+        if (event.which == 32) {
+           event.preventDefault();
+           $('.arrow').toggleClass('hide');
+        } else if (event.which == 115) {
+          $('.thumb').toggleClass('square');
+        } else if (event.which == 99) {
+          $('.thumb.current').toggleClass('hide');
+        } else if (event.which == 102) {
+          $('.subhead').toggleClass('fixed');
+          $('.content').toggleClass('fixed');
+        } else if (event.which == 105) {
+          $('.thumbs').toggleClass('hide');
+          $('.installs').toggleClass('hide');
+        }
+      });
+
+      $(window).scroll(function(event) {
+        var y_position = $(window).scrollTop();
+        y_position >= 710 ? $('.subhead.fixed').fadeOut(200) : $('.subhead.fixed').fadeIn(200);
+      });
+    </script>
+
+  </body>
+</html>
