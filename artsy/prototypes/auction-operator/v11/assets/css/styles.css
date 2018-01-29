@@ -490,6 +490,7 @@ ul, li {
 .marker {
   width: 32px;
   font-size: 8px;
+  line-height: 1;
   text-transform: uppercase;
   padding: 5px 0 3px 0;
   text-align: center;
@@ -565,6 +566,7 @@ ul, li {
 .foot.left.max::after {
   width: 32px;
   font-size: 8px;
+  line-height: 1;
   text-transform: uppercase;
   padding: 5px 0 3px 0;
   text-align: center;
