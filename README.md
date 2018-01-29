@@ -25,7 +25,7 @@
 2. git config --global user.email `"<YOUR EMAIL ADDRESS>"`
 
 #### Download and install software
-1. [Sublime Text](http://www.sublimetext.com/3)
+1. [VS Code](https://code.visualstudio.com/download)
 2. [Sketch](https://www.sketchapp.com/)
 
 ---
