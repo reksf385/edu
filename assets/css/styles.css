@@ -3,7 +3,7 @@ div { vertical-align: top; }
 
 body {
   font-size: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
   color: #29439F;
@@ -34,7 +34,6 @@ body {
 .menu {
   font-size: 15px;
   padding: 30px;
-  font-family: 'Roboto Mono', monospace;
   background: #f1f1f1;
 }
 
