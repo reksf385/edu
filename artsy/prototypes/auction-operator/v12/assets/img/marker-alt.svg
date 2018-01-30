@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="16px" viewBox="0 0 200 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 16</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="desktop---1024px-copy-35" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-135.000000, -156.000000)">
+        <g id="Group-19" transform="translate(135.000000, 76.000000)" fill="#0FDB83">
+            <g id="Group">
+                <g id="Group-22">
+                    <g id="Group-15" transform="translate(0.000000, 16.000000)">
+                        <g id="Group-16" transform="translate(0.000000, 64.000000)">
+                            <polygon id="Triangle-2" points="10 8 0 16 0 0"></polygon>
+                            <polygon id="Triangle-2-Copy-2" points="111 8 101 16 101 0"></polygon>
+                            <polygon id="Triangle-2" transform="translate(195.000000, 8.000000) scale(-1, 1) translate(-195.000000, -8.000000) " points="200 8 190 16 190 0"></polygon>
+                            <polygon id="Triangle-2-Copy" transform="translate(94.000000, 8.000000) scale(-1, 1) translate(-94.000000, -8.000000) " points="99 8 89 16 89 0"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
