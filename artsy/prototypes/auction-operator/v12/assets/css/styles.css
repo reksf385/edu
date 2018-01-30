@@ -414,7 +414,7 @@ body {
 .alert-window.show { display: block; }
 
 .alert-window .content {
-  min-height: 150px;
+  min-height: 140px;
   background: #fff;
   padding: 20px;
   font-size: 22px;
@@ -424,6 +424,14 @@ body {
 
 .alert-window .message {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.alert-window .rows {
+  position: absolute;
+  width: calc(100% - 40px);
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
