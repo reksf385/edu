@@ -270,13 +270,17 @@ body {
 }
 
 .hold-sale {
+  width: 150px;
   height: 60px;
   background: #F7625A;
   position: fixed;
   top: 0;
   right: 0;
   margin: 0;
+  padding: 23px 0 0 0;
 }
+
+.hold-sale.hide { display: none; }
 
 .current-ask, .current-increment { background: #fff; }
 
@@ -490,6 +494,13 @@ body {
   margin: 20px 0 0 0;
   border-color: #622EEC;
   color: #622EEC;
+}
+
+.alert-window .small-wide-button .button-description {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
 }
 
 .marker {

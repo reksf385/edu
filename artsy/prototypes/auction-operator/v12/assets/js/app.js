@@ -394,14 +394,25 @@ function sell_lot() {
 }
 
 function pass_lot() {
-  $('.overlay-wrapper').addClass('show');
-  $('.alert-window.pass-lot').addClass('show');
+  if ($('body').hasClass('initializing')) {
+    $(".alert-window.starting-ask").removeClass("show");
+    $(".alert-window.pass-lot").addClass("show");
+  } else {
+    $('.overlay-wrapper').addClass('show');
+    $('.alert-window.pass-lot').addClass('show');
+  }
 }
 
 function cancel() {
-  $('.overlay-wrapper').removeClass('show');
-  $('.alert-window.confirm-sale').removeClass('show');
-  $('.alert-window.pass-lot').removeClass('show');
+  if ($('body').hasClass('initializing')) {
+    $(".alert-window.starting-ask").addClass("show");
+    $(".alert-window.pass-lot").removeClass("show");
+    // $(".alert-window.change-lot").removeClass("show");
+  } else {
+    $(".overlay-wrapper").removeClass("show");
+    $(".alert-window.confirm-sale").removeClass("show");
+    $(".alert-window.pass-lot").removeClass("show");
+  }
 }
 
 function confirm_sale() {
@@ -525,6 +536,7 @@ function open_bidding() {
   console.log('hiii')
   Bid.lot_initialized = true;
   $(".overlay-wrapper").removeClass("show");
+  $(".hold-sale").addClass("hide");
   $("body").removeClass("initializing");
   $(".alert-window.starting-ask").removeClass('show');
 }
