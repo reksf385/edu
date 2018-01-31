@@ -2,6 +2,7 @@
   <head>
     <title>v12 - Auction Operator</title>
     <link href="assets/css/styles.css" media="all" rel="stylesheet" />
+    <link href="assets/css/alerts.css" media="all" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="assets/js/foot.js"></script>
   </head>
@@ -25,8 +26,26 @@
           <span data-keycode="70" class="floor small-button">Floor</span>
           <span data-keycode="13" class="ok small-button">Ok</span>
         </div>
-        
       </div> <!-- starting ask -->
+
+      <div class="alert-window change-lot">
+        <input type="text" placeholder="Change lot ..." />
+        <div class="content">
+          <div class="lot-button sold">Lot 874: Ugo Rondinone</div>
+          <div class="lot-button current">Lot 875: Zoe Leondar</div>
+          <div class="lot-button upcoming">Lot 876: Laura Owens</div>
+          <div class="lot-button upcoming">Lot 877: Karen Kilimnik</div>
+          <div class="lot-button upcoming">Lot 878: Ajay Kurian</div>
+          <div class="lot-button upcoming">Lot 879: Zoe Leondar</div>
+          <div class="lot-button upcoming">Lot 880: Laura Owens</div>
+          <div class="lot-button upcoming">Lot 881: Karen Kilimnik</div>
+          <div class="lot-button upcoming">Lot 882: Ajay Kurian</div>
+        </div>
+        <div class="alert-buttons">
+          <span data-keycode="27" class="cancel small-button">Cancel</span>
+          <span data-keycode="13" class="ok small-button">Ok</span>
+        </div>
+      </div> <!-- change lot -->
 
       <div class="alert-window confirm-sale">
         <div class="content">

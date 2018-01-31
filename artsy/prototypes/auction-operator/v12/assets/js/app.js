@@ -73,6 +73,10 @@ $(document).keyup(function(event) {
   } else if (event.keyCode == 76) {
     message('Last call', 'red');
     active_state('.last-call');
+  } else if (event.keyCode == 67) {
+    if ($("body").hasClass("initializing")) {
+      toggle_change_lot();
+    }
   } else if (event.keyCode == 8) {
     del_char();
   } else if (event.keyCode == 48) {
@@ -407,7 +411,7 @@ function cancel() {
   if ($('body').hasClass('initializing')) {
     $(".alert-window.starting-ask").addClass("show");
     $(".alert-window.pass-lot").removeClass("show");
-    // $(".alert-window.change-lot").removeClass("show");
+    $(".alert-window.change-lot").removeClass("show");
   } else {
     $(".overlay-wrapper").removeClass("show");
     $(".alert-window.confirm-sale").removeClass("show");
@@ -539,4 +543,9 @@ function open_bidding() {
   $(".hold-sale").addClass("hide");
   $("body").removeClass("initializing");
   $(".alert-window.starting-ask").removeClass('show');
+}
+
+function toggle_change_lot() {
+  $(".alert-window.starting-ask").removeClass("show");
+  $(".alert-window.change-lot").addClass("show");
 }
