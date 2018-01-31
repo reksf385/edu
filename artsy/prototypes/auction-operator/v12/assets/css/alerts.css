@@ -237,3 +237,16 @@
 .alert-window.change-lot .lot-button.selected:after {
   background: url('../img/lot-button-selected.svg');
 }
+
+.current-ask .placeholder-button-value {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  text-align: right;
+  color: rgba(98,46,236,.5);
+}
+
+.current-ask .placeholder-button-value.hide {
+  display: none;
+}

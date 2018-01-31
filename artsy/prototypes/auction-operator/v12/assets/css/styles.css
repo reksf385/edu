@@ -298,6 +298,7 @@ body {
   transform: translateY(-50%);
   right: 15px;
   text-align: right;
+  height: 25px;
 }
 
 .line-item {
@@ -486,7 +487,6 @@ body {
 .foot.high,
 .foot.max { color: #fff; }
 
-
 .animating {
   animation: 125ms blink step-end infinite;
   color: #000 !important;
@@ -496,4 +496,19 @@ body {
 @keyframes blink {
   from, to { background: #000; }
   50% { background: #6E1FFF; }
+}
+
+.current-ask.typing .button-value:after {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: 0;
+  width: 2px;
+  height: 25px;
+  animation: 1000ms cursor_caret step-end infinite;
+}
+
+@keyframes cursor_caret {
+  from, to { background: #6E1FFF; }
+  50% { background: transparent; }
 }

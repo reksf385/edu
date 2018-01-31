@@ -82,6 +82,8 @@ $(document).keyup(function(event) {
     }
   } else if (event.keyCode == 8) {
     del_char();
+  } else if (event.keyCode == 191) {
+    update_number('/');
   } else if (event.keyCode == 48) {
     update_number(0);
   } else if (event.keyCode == 49) {
@@ -115,9 +117,13 @@ function del_char() {
   } else {
     Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
     Bid.temp_ask = Bid.temp_ask.slice(0,-1);
-    Bid.temp_ask = Math.abs(Bid.temp_ask);
+    Bid.temp_ask = Bid.temp_ask == '' ? '' : Math.abs(Bid.temp_ask);
     Bid.temp_ask = Bid.temp_ask.toLocaleString();
     $('.current-ask .button-value').html(Bid.temp_ask);
+    if (Bid.temp_ask == '') {
+      $(".current-ask .placeholder-button-value").removeClass('hide');
+      // disable floor/ok buttons
+    }
   }
 }
 
@@ -136,13 +142,19 @@ function update_number(value) {
     Bid.temp_increment = Bid.temp_increment.toLocaleString();
     $('.current-increment .increment').html(Bid.temp_increment);
   } else {
-    Bid.override_start_price = true;
-    $('.wide-button.current-ask').addClass('typing');
-    Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
-    Bid.temp_ask += value;
-    Bid.temp_ask = Math.abs(Bid.temp_ask);
-    Bid.temp_ask = Bid.temp_ask.toLocaleString();
-    $('.current-ask .button-value').html(Bid.temp_ask);
+    $(".wide-button.current-ask").addClass("typing");
+    $(".current-ask .button-value").html('');
+    if (value == '/') {
+      $('.current-ask .placeholder-button-value').removeClass('hide');
+    } else {
+      $(".placeholder-button-value").addClass("hide");
+      Bid.override_start_price = true;
+      Bid.temp_ask = Bid.temp_ask.replace(/,/g, "");
+      Bid.temp_ask += value;
+      Bid.temp_ask = Math.abs(Bid.temp_ask);
+      Bid.temp_ask = Bid.temp_ask.toLocaleString();
+      $(".current-ask .button-value").html(Bid.temp_ask);
+    }
   }
 }
 
@@ -298,6 +310,7 @@ function set_current_ask(status) {
     Bid.ask_string = Bid.ask_value.toLocaleString();
   }
   $('.current-ask .button-value').html(Bid.ask_string);
+  $(".current-ask .placeholder-button-value").html(Bid.ask_string);
 }
 
 function set_sell_at() {
