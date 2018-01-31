@@ -263,6 +263,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
+  color: #fff;
 }
 
 .pause-sale-button.paused {
