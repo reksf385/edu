@@ -39,8 +39,9 @@
 .alert-window .message {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  width: 100%;
+  text-align: center;
+  transform: translateY(-50%);
 }
 
 .alert-window .rows {
@@ -250,3 +251,33 @@
 .current-ask .placeholder-button-value.hide {
   display: none;
 }
+
+.pause-sale-button {
+  width: 150px;
+  height: 60px;
+  background: #F7625A;
+  position: fixed;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.pause-sale-button.paused {
+  background: #0FDB83;
+}
+
+.pause-sale-button:after {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pause-sale-button:after { content: 'Pause sale'; }
+.pause-sale-button.paused:after { content: 'Resume sale'; }
+
+.hold-sale.hide { display: none; }

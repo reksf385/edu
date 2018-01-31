@@ -584,3 +584,9 @@ function change_lot() {
     window.location.href = url;
   }
 }
+
+$(".pause-sale-button").click(function() {
+  $(this).toggleClass('paused');
+  $('.alert-window.pause-sale').toggleClass('show');
+  $('.alert-window.starting-ask').toggleClass('show');
+});
