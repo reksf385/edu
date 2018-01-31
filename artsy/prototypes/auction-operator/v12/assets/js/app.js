@@ -44,7 +44,9 @@ $(document).keyup(function(event) {
   if (event.keyCode == 27) {
     $('.overlay-wrapper').hasClass('show') ? cancel() : reset_number();
   } else if (event.keyCode == 13) {
-    if ($('body').hasClass('initializing')) {
+    if ($('body').hasClass('initializing') && $('.alert-window.change-lot').hasClass('show')) {
+      change_lot();
+    } else if ($('body').hasClass('initializing')) {
       set_number();
     } else if ($('.overlay-wrapper').hasClass('show')) {
       confirm_sale();
@@ -548,4 +550,18 @@ function open_bidding() {
 function toggle_change_lot() {
   $(".alert-window.starting-ask").removeClass("show");
   $(".alert-window.change-lot").addClass("show");
+  $('input').focus();
+}
+
+$('.lot-button').click(function() {
+  $('.lot-button').removeClass('selected');
+  $(this).addClass('selected');
+  $(".change-lot .ok.disabled").removeClass("disabled");
+});
+
+function change_lot() {
+  if (!$('.alert-window .ok').hasClass('disabled')) {
+    var url = window.location;
+    window.location.href = url;
+  }
 }
