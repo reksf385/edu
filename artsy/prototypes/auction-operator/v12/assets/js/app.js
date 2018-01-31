@@ -401,8 +401,8 @@ function sell_lot() {
 
 function pass_lot() {
   if ($('body').hasClass('initializing')) {
-    $(".alert-window.starting-ask").removeClass("show");
-    $(".alert-window.pass-lot").addClass("show");
+    var url = window.location;
+    window.location.href = url;
   } else {
     $('.overlay-wrapper').addClass('show');
     $('.alert-window.pass-lot').addClass('show');
@@ -539,7 +539,6 @@ function toggle_increment_strategy(toggle_to_activate, increment_strategy) {
 }
 
 function open_bidding() {
-  console.log('hiii')
   Bid.lot_initialized = true;
   $(".overlay-wrapper").removeClass("show");
   $(".hold-sale").addClass("hide");
