@@ -197,7 +197,6 @@ function set_number() {
         Bid.ask_string = Bid.temp_ask;
         Bid.temp_ask = "";
       }
-
       open_bidding();
       set_increment();
       $(".current-ask").removeClass("typing");
@@ -209,6 +208,8 @@ function set_number() {
       Bid.temp_ask = "";
       set_increment();
       $(".current-ask").removeClass("typing");
+    } else {
+      reset_number();
     }
   }
   check_for_online_bidders();
@@ -279,13 +280,12 @@ function set_increment() {
 }
 
 function bid(source) {
-  var submittable_bid = source == 'online' && $('.online').hasClass('disabled') ? false : true,
-      fixed_number    = $('.typing')[0] == undefined ? true : false,
-      set_with_floor  = source == 'Floor' ? true : false;
+  var submittable_online_bid = source == "online" && $(".online").hasClass("disabled") ? false : true,
+      set_with_floor         = source == "Floor" ? true : false;
 
   Bid.current_winner = source;
 
-  if (fixed_number && submittable_bid || set_with_floor) {
+  if (submittable_online_bid || set_with_floor) {
     set_number();
     set_sell_at();
     set_increment();
@@ -293,6 +293,7 @@ function bid(source) {
     add_to_history(source);
     check_for_online_bidders();
     slide_to_foot(true);
+    $('.current-ask').removeClass('typing');
   }
 }
 
