@@ -265,6 +265,11 @@
   text-transform: uppercase;
   cursor: pointer;
   color: #fff;
+  display: none;
+}
+
+.initializing .pause-sale-button {
+  display: block;
 }
 
 .pause-sale-button.paused {
