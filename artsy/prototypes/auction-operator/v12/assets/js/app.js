@@ -1,8 +1,9 @@
 var typing = false;
 var Bid = {
       lot_initialized:          false,
-      ask_value:                0,
-      ask_string:               '0',
+      override_start_price:     false,
+      ask_value:                1000,
+      ask_string:               '1,000',
       temp_ask:                 '',
       sell_value:               0,
       sell_string:              '0',
@@ -135,6 +136,7 @@ function update_number(value) {
     Bid.temp_increment = Bid.temp_increment.toLocaleString();
     $('.current-increment .increment').html(Bid.temp_increment);
   } else {
+    Bid.override_start_price = true;
     $('.wide-button.current-ask').addClass('typing');
     Bid.temp_ask = Bid.temp_ask.replace(/,/g, '');
     Bid.temp_ask += value;
@@ -177,20 +179,24 @@ function set_number() {
       initialize_footing();
     }
   } else {
-    if (Bid.temp_ask !== '') {
-      set_bid_split_status();
-
-      Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ''));
-      Bid.ask_string = Bid.temp_ask;
-      Bid.temp_ask = '';
-
-      set_increment();
-      
-      if (Bid.lot_initialized) {
-        open_bidding();
+    if ($("body").hasClass("initializing")) {
+      if (Bid.override_start_price && $(".alert-window .button-value").html() != '0') {
+        Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ""));
+        Bid.ask_string = Bid.temp_ask;
+        Bid.temp_ask = "";
       }
 
-      $('.current-ask').removeClass('typing');
+      open_bidding();
+      set_increment();
+      $(".current-ask").removeClass("typing");
+      
+    } else if (Bid.temp_ask !== "") {
+      set_bid_split_status();
+      Bid.ask_value = Math.abs(Bid.temp_ask.replace(/,/g, ""));
+      Bid.ask_string = Bid.temp_ask;
+      Bid.temp_ask = "";
+      set_increment();
+      $(".current-ask").removeClass("typing");
     }
   }
   check_for_online_bidders();
