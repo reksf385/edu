@@ -478,11 +478,11 @@ body {
   margin: 0;
   background: #F1CD39;
   color: #000 !important;
-  width: 110px;
+  width: 115px;
 }
 
 .alert-window.starting-ask .optoins .small-button.change-lot {
-  right: 120px;
+  right: 130px;
 }
 
 .alert-window.starting-ask .content .lot:before {
