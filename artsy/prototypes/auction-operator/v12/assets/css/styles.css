@@ -199,6 +199,7 @@ body {
   padding: 2px 0 0 2px;
   text-align: left;
   position: relative;
+  cursor: default;
 }
 
 .current-increment .action-buttons {

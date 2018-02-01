@@ -73,7 +73,7 @@ $(document).keyup(function(event) {
   } else if (event.keyCode == 87) {
     message('Fair warning', 'yellow');
     active_state('.warning');
-  } else if (event.keyCode == 76) {
+  } else if (event.keyCode == 69) {
     message('Last call', 'red');
     active_state('.last-call');
   } else if (event.keyCode == 67) {
@@ -122,7 +122,6 @@ function del_char() {
     $('.current-ask .button-value').html(Bid.temp_ask);
     if (Bid.temp_ask == '') {
       $(".current-ask .placeholder-button-value").removeClass('hide');
-      // disable floor/ok buttons
     }
   }
 }
