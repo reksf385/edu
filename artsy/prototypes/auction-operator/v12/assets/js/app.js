@@ -519,7 +519,6 @@ function slide_to_foot(should_animate) {
     } else {
       $('.footing').stop().scrollTop(y_distance);
     }
-    // $(foot_to_slide_to).prev().removeClass('on');
     for (i = 0; i < $(foot_to_slide_to).index(); i++) {
       $($('.foot')[i]).removeClass('on');
     }
