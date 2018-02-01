@@ -345,9 +345,10 @@ body {
 
 .disabled.online,
 .disabled.online-bidder {
-  border: 2px solid #ccc;
+  border: 2px solid #777;
   background: #666;
-  color: #ccc;
+  color: #777;
+  cursor: default;
 }
 
 
