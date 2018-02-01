@@ -479,13 +479,11 @@ body {
 
 .animating {
   animation: 125ms blink step-end infinite;
-  color: #000 !important;
-  border-color: #000 !important;
 }
 
 @keyframes blink {
-  from, to { background: #000; }
-  50% { background: #6E1FFF; }
+  from, to { background: #fff; color: #000 !important; border-color: #000 !important; }
+  50% { background: #6E1FFF; color: #fff !important; border-color: #fff !important;  }
 }
 
 .current-ask.typing .button-value:after {
