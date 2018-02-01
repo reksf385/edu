@@ -1,6 +1,5 @@
 var typing = false;
 var Bid = {
-      lot_initialized:          false,
       override_start_price:     false,
       ask_value:                1000,
       ask_string:               '1,000',
@@ -26,7 +25,6 @@ Bid.online_high_bid = 1200; //foot[Bid.random_key];
 Bid.online_max_bid  = 1500; //foot[Bid.random_key + 5];
 
 initialize_footing();
-reset_number();
 set_increment();
 display_high_and_max();
 
@@ -165,14 +163,11 @@ function reset_number() {
     toggle_increment_strategy(Bid.prev_toggle, 'default');
     Bid.increment_focus = false;
     typing = false;
-  } else if (Bid.lot_initialized) {
+  } else {
     Bid.temp_ask = '';
     $('.current-ask .button-value').html(Bid.ask_string);
     $('.current-ask').removeClass('typing');
     typing = false;
-  } else {
-    typing = true;
-    Bid.lot_initialized = true;
   }
 }
 
@@ -558,7 +553,6 @@ function toggle_increment_strategy(toggle_to_activate, increment_strategy) {
 }
 
 function open_bidding() {
-  Bid.lot_initialized = true;
   $(".overlay-wrapper").removeClass("show");
   $(".hold-sale").addClass("hide");
   $("body").removeClass("initializing");
