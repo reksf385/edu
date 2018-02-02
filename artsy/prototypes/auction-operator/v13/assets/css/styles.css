@@ -501,8 +501,14 @@ body {
   50% { background: transparent; }
 }
 
-.small-button:hover,
+
+.small-button { border: 2px solid transparent; }
+
+.alert-window .small-button:hover,
 .small-wide-button:hover,
 .square-button:hover { border-color: #fff; }
+
+.alert-window .options .small-button:hover,
+.small-button:hover { border-color: #000; }
 
 .small-wide-button.current-increment:hover { border-color: #000; }

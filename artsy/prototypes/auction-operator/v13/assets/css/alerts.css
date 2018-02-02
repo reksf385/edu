@@ -90,9 +90,9 @@
 .alert-window.change-lot { width: 470px; }
 
 .alert-window.starting-ask .content { text-align: left; }
-.alert-window.starting-ask .optoins { position: relative; }
+.alert-window.starting-ask .options { position: relative; }
 
-.alert-window.starting-ask .optoins .small-button {
+.alert-window.starting-ask .options .small-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -102,7 +102,7 @@
   width: 115px;
 }
 
-.alert-window.starting-ask .optoins .small-button.change-lot {
+.alert-window.starting-ask .options .small-button.change-lot {
   right: 130px;
 }
 
