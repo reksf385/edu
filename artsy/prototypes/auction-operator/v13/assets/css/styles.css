@@ -500,3 +500,9 @@ body {
   from, to { background: #6E1FFF; }
   50% { background: transparent; }
 }
+
+.small-button:hover,
+.small-wide-button:hover,
+.square-button:hover { border-color: #fff; }
+
+.small-wide-button.current-increment:hover { border-color: #000; }
