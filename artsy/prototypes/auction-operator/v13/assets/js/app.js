@@ -21,7 +21,7 @@ var Bid = {
       current_winner:           ''
     };
 
-Bid.online_high_bid = 2000; //foot[Bid.random_key];
+Bid.online_high_bid = 2200; //foot[Bid.random_key];
 Bid.online_max_bid  = 3000; //foot[Bid.random_key + 5];
 
 initialize_footing();
