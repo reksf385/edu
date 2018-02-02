@@ -84,7 +84,6 @@
   cursor: default;
 }
 
-.alert-buttons .cancel { color: #000 !important; background: #fff; margin-right: 2px; }
 .alert-buttons .floor { margin-right: 2px; }
 .alert-window.starting-ask,
 .alert-window.change-lot { width: 470px; }
@@ -153,7 +152,6 @@
   font-size: 12px;
   padding: 22px 20px 22px 48px;
   outline: none;
-  letter-spacing: 1px;
 }
 
 .alert-window.change-lot .input-search-icon {
@@ -261,7 +259,6 @@
   top: 0;
   right: 0;
   font-size: 12px;
-  letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
   color: #fff;
