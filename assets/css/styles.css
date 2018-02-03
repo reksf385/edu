@@ -6,17 +6,17 @@ body {
   font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
-  color: #29439F;
+  color: #29439f;
 }
 
 .wrapper {
-  width: 1250px;
+  max-width: 1800px;
   margin: 0 auto;
   padding: 40px 0;
 }
 
 .c {
-  margin: 0 20px 60px 20px;
+  margin: 0 20px 5em 20px;
   font-size: 18px;
   line-height: 1.6em;
   display: inline-block;
@@ -26,43 +26,45 @@ body {
 .c2 { width: calc(50% - 40px); }
 .c4 { width: calc(100% - 40px); }
 
-.quote {
-  border-left: 10px solid #29439F;
-  padding: 0 0 0 30px;
-}
-
-.menu {
-  font-size: 15px;
-  padding: 30px;
-  background: #f1f1f1;
-}
-
-.labs { background: #C2BDB2; }
-.students { background: #A9D7AE; }
-.resources { background: #FFE2AD; }
-.reminder { background: #FCD9CA; }
-
-.menu h2 {
-  font-size: 15px;
-  margin: 0 0 15px 0;
-  padding: 0;
-}
+.no-padding { padding: 0; }
 
 a {
   color: #29439F;
   text-decoration: none;
-  border-bottom: 1px solid #29439F;
+  border-bottom: 1px solid #29439f;
 }
 
-a:hover { background: rgba(255,255,255,.5); }
+a:hover { background: rgba(41,67,159,.25); }
 
 ul, li { margin: 0 0 0 10px; padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+  margin: 0 0 1.6em 0;
   padding: 0;
   font-size: 18px;
   font-weight: normal;
 }
 
-p { max-width: 775px; }
+h1 { margin: 0; }
+
+p { 
+  margin: 0; 
+  padding: 0; 
+  max-width: 620px;
+}
+
+@media only screen and (max-width: 960px) {
+  .wrapper {
+    max-width: 768px;
+  }
+
+  .c1 { width: calc(50% - 40px); }
+}
+
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+  }
+
+  .c1, .c2, .c3, .c4 { width: calc(100% - 40px); }
+}
