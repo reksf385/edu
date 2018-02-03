@@ -10,24 +10,42 @@ body {
   text-transform: uppercase;
 }
 
-.wrapper {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 40px 0;
+.header {
+  width: calc(35% - 4em);
 }
 
-.c {
-  margin: 0 20px 4em 20px;
+.header:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background: url('../img/favicon.png');
+  background-size: 80px 80px;
+  position: fixed;
+  bottom: 2em;
+  left: 2em;
+}
+
+.header h1 {
+  position: fixed;
+  top: 2em;
+  left: 2em;
+}
+
+.wrapper {
+  width: calc(65% - 4em);
+  max-width: 700px;
+}
+
+
+.header, .wrapper {
+  margin: 2em;
   font-size: 18px;
   line-height: 1.6em;
   display: inline-block;
 }
 
-.c1 { width: calc(25% - 40px); }
-.c2 { width: calc(50% - 40px); }
-.c4 { width: calc(100% - 40px); }
-
-.no-padding { padding: 0; }
+.section { margin-bottom: 2em; }
 
 a {
   color: #000;
@@ -56,18 +74,20 @@ p {
   padding: 0; 
 }
 
-@media only screen and (max-width: 960px) {
-  .wrapper {
-    max-width: 768px;
+@media only screen and (max-width: 1030px) {
+  .header, .wrapper {
+    width: calc(100% - 4em);
+    font-size: 16px;
   }
 
-  .c1 { width: calc(50% - 40px); }
-}
+  .header h1 { position: static; }
 
-@media only screen and (max-width: 768px) {
-  .wrapper {
-    width: 100%;
+  .header:after {
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    left: auto;
+    right: 2em;
   }
 
-  .c1, .c2, .c3, .c4 { width: calc(100% - 40px); }
 }
