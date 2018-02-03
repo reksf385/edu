@@ -6,7 +6,8 @@ body {
   font-family: 'Roboto Mono', monospace;
   margin: 0;
   padding: 0;
-  color: #29439f;
+  color: #000;
+  text-transform: uppercase;
 }
 
 .wrapper {
@@ -16,7 +17,7 @@ body {
 }
 
 .c {
-  margin: 0 20px 5em 20px;
+  margin: 0 20px 4em 20px;
   font-size: 18px;
   line-height: 1.6em;
   display: inline-block;
@@ -29,28 +30,30 @@ body {
 .no-padding { padding: 0; }
 
 a {
-  color: #29439F;
+  color: #000;
   text-decoration: none;
-  border-bottom: 1px solid #29439f;
+  border-bottom: 1px solid #000;
 }
 
-a:hover { background: rgba(41,67,159,.25); }
+a:hover { background: #ff0; }
 
-ul, li { margin: 0 0 0 10px; padding: 0; }
+ul, li { 
+  margin: 0; 
+  padding: 0; 
+  list-style: none;
+}
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 1.6em 0;
+  margin: 0;
   padding: 0;
-  font-size: 18px;
-  font-weight: normal;
+  font-size: inherit;
 }
 
-h1 { margin: 0; }
+h1 { font-weight: normal; }
 
 p { 
   margin: 0; 
   padding: 0; 
-  max-width: 620px;
 }
 
 @media only screen and (max-width: 960px) {
