@@ -318,7 +318,7 @@
   transform: translateY(-50%);
 }
 
-.close-sale-button:after { content: 'Close sale'; }
+.close-sale-button:after { content: 'End sale'; }
 .pause-sale-button:after { content: 'Pause sale'; }
 .pause-sale-button.paused:after { content: 'Resume sale'; }
 
