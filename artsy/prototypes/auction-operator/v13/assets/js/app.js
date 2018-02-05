@@ -47,7 +47,7 @@ $(document).keyup(function(event) {
       change_lot();
     } else if ($('.overlay-wrapper').hasClass('show') && $('.alert-window.close-sale').hasClass('show')) {
       close_sale();
-    } else if ($('.overlay-wrapper').hasClass('show')) {
+    } else if ($('.overlay-wrapper').hasClass('show') && $('.alert-window.confirm-sale').hasClass('show')) {
       confirm_sale();
     } else if ($('body').hasClass('initializing')) {
       set_number();
@@ -169,6 +169,7 @@ function reset_number() {
     Bid.temp_ask = '';
     $('.current-ask .button-value').html(Bid.ask_string);
     $('.current-ask').removeClass('typing');
+    $(".current-ask .placeholder-button-value").addClass("hide");
     typing = false;
   }
 }
@@ -194,11 +195,13 @@ function set_number() {
       Bid.temp_ask = "";
       set_increment();
       $(".current-ask").removeClass("typing");
+      $(".current-ask .placeholder-button-value").addClass("hide");
     } else {
       reset_number();
     }
     if ($("body").hasClass("initializing")) {
       open_bidding();
+      $(".current-ask .placeholder-button-value").addClass("hide");
     }
   }
   check_for_online_bidders();
