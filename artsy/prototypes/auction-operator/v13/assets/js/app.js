@@ -592,6 +592,5 @@ $('.close-sale-button').click(function() {
 });
 
 function close_sale() {
-  alert('hi')
   window.location.href = 'closed.html';
 }
