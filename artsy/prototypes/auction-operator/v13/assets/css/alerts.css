@@ -323,3 +323,10 @@
 .pause-sale-button.paused:after { content: 'Resume sale'; }
 
 .hold-sale.hide { display: none; }
+
+.alert-window .cancel { border-color: transparent !important; }
+.alert-window .cancel:hover { 
+  border-color: #fff !important; 
+  background: #000;
+  color: #fff !important;
+}

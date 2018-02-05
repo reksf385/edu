@@ -43,14 +43,14 @@ $(document).keyup(function(event) {
   if (event.keyCode == 27) {
     $('.overlay-wrapper').hasClass('show') ? cancel() : reset_number();
   } else if (event.keyCode == 13) {
-    if ($('body').hasClass('initializing') && $('.alert-window.change-lot').hasClass('show')) {
+    if ($('.alert-window.change-lot').hasClass('show')) {
       change_lot();
-    } else if ($('.overlay-wrapper').hasClass('show') && $('.alert-window.close-sale').hasClass('show')) {
+    } else if ($('.alert-window.pass-lot').hasClass('show')) {
+      pass_lot();
+    } else if ($('.alert-window.close-sale').hasClass('show')) {
       close_sale();
-    } else if ($('.overlay-wrapper').hasClass('show') && $('.alert-window.confirm-sale').hasClass('show')) {
+    } else if ($('.alert-window.confirm-sale').hasClass('show')) {
       confirm_sale();
-    } else if ($('body').hasClass('initializing')) {
-      set_number();
     } else {
       set_number();
     }
@@ -412,7 +412,7 @@ function sell_lot() {
 }
 
 function pass_lot() {
-  if ($('body').hasClass('initializing')) {
+  if ($('body').hasClass('initializing') || $('.alert-window.pass-lot').hasClass('show')) {
     var url = window.location;
     window.location.href = url;
   } else {
