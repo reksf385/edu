@@ -323,7 +323,7 @@ body {
 
 .disabled.online,
 .disabled.online-bidder {
-  border: 2px solid #777;
+  border: 2px solid #777 !important;
   background: #666;
   color: #777;
   cursor: default;
