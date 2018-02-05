@@ -496,7 +496,3 @@ body {
 .small-wide-button.current-increment:hover { border-color: #000; }
 
 .alert-buttons .cancel { color: #000 !important; background: #fff; margin-right: 2px; }
-
-/* TEMP FOR DEMO */
-.foot { color: #fff !important;}
-.footing-wrapper.right, .footing-wrapper.left { background: #333 url('../img/divider.svg') repeat-y 100px 0; }
