@@ -443,7 +443,7 @@ body {
   
 }
 
-.foot.high::after { content: 'High'; background: #F1CD39; }
+.foot.high::after { content: 'Min'; background: #F1CD39; }
 .foot.max::after { content: 'Max'; background: #F7625A; }
 
 .foot.max.hide::after { display: none; }
