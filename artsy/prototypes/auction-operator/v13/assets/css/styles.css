@@ -481,6 +481,7 @@ body {
 .header-button,
 .small-button { border: 2px solid transparent; }
 
+.close-sale-button:hover,
 .pause-sale-button:hover,
 .header-button:hover,
 .alert-buttons .small-button:hover,

@@ -45,10 +45,12 @@ $(document).keyup(function(event) {
   } else if (event.keyCode == 13) {
     if ($('body').hasClass('initializing') && $('.alert-window.change-lot').hasClass('show')) {
       change_lot();
-    } else if ($('body').hasClass('initializing')) {
-      set_number();
+    } else if ($('.overlay-wrapper').hasClass('show') && $('.alert-window.close-sale').hasClass('show')) {
+      close_sale();
     } else if ($('.overlay-wrapper').hasClass('show')) {
       confirm_sale();
+    } else if ($('body').hasClass('initializing')) {
+      set_number();
     } else {
       set_number();
     }
@@ -418,9 +420,8 @@ function pass_lot() {
 
 function cancel() {
   if ($('body').hasClass('initializing')) {
+    $(".alert-window").removeClass("show");
     $(".alert-window.starting-ask").addClass("show");
-    $(".alert-window.pass-lot").removeClass("show");
-    $(".alert-window.change-lot").removeClass("show");
   } else {
     $(".overlay-wrapper").removeClass("show");
     $(".alert-window.confirm-sale").removeClass("show");
@@ -578,3 +579,19 @@ $(".pause-sale-button").click(function() {
   $('.alert-window.pause-sale').toggleClass('show');
   $('.alert-window.starting-ask').toggleClass('show');
 });
+
+$('.log-in').click(function() {
+  $('.alert-window').toggleClass('show');
+});
+
+$('.username').focus();
+
+$('.close-sale-button').click(function() {
+  $(".alert-window").removeClass("show");
+  $('.alert-window.close-sale').addClass('show');
+});
+
+function close_sale() {
+  alert('hi')
+  window.location.href = 'closed.html';
+}

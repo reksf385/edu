@@ -78,6 +78,26 @@
   padding: 16px 0 0 0;
 }
 
+.alert-window.login input {
+  width: 100%;
+  font-family: 'avant-garde', Helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+  text-transform: uppercase;
+  border: 2px solid #000;
+  margin: 20px 0 0 0;
+  font-size: 12px;
+  padding: 22px 20px 22px 20px;
+  outline: none;
+}
+
+.alert-window.login input:focus {
+  border-color: #622EEC;
+}
+
+.login .alert-buttons .small-button,
+.start-sale .alert-buttons .small-button { width: 100%; }
+
 .alert-buttons .small-button.disabled {
   background: #fff;
   color: #ccc !important;
@@ -254,10 +274,10 @@
 .pause-sale-button {
   width: 150px;
   height: 60px;
-  background: #F7625A;
+  background: #F1CD39;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 190px;
   font-size: 12px;
   text-transform: uppercase;
   cursor: pointer;
@@ -265,6 +285,22 @@
   display: none;
 }
 
+.close-sale-button {
+  background: #F7625A;
+  width: 150px;
+  height: 60px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+  display: none;
+  border: 2px solid transparent;
+}
+
+.initializing .close-sale-button,
 .initializing .pause-sale-button {
   display: block;
 }
@@ -273,6 +309,7 @@
   background: #0FDB83;
 }
 
+.close-sale-button:after,
 .pause-sale-button:after {
   width: 100%;
   text-align: center;
@@ -281,6 +318,7 @@
   transform: translateY(-50%);
 }
 
+.close-sale-button:after { content: 'Close sale'; }
 .pause-sale-button:after { content: 'Pause sale'; }
 .pause-sale-button.paused:after { content: 'Resume sale'; }
 
