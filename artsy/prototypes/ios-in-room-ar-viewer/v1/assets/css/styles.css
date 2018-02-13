@@ -1,0 +1,28 @@
+@import url("http://fast.fonts.com/t/1.css?apiType=css&projectid=f7f47a40-b25b-44ee-9f9c-cfdfc8bb2741");
+@font-face{
+  font-family:"avant-garde";
+  src:url("../../../../../assets/fonts/b74e5f86-4477-435a-abdf-32d8215f21bc.eot?iefix") format("eot");}
+@font-face{
+  font-family:"avant-garde";
+  src:url("../../../../../assets/fonts/b74e5f86-4477-435a-abdf-32d8215f21bc.eot?iefix");
+  src:url("../../../../../assets/fonts/c18aee57-7585-4a8b-9a1c-69d226301d73.woff") format("woff"),
+      url("../../../../../assets/fonts/44ccbb2b-0fbc-4d95-b1da-0aa73bd26fb0.ttf") format("truetype"),
+      url("../../../../../assets/fonts/f2de529c-11d2-43b7-be7c-05c5aaeaf133.svg#f2de529c-11d2-43b7-be7c-05c5aaeaf133") format("svg");
+}
+
+* { box-sizing: border-box; vertical-align: top; }
+
+body {
+  margin: 0;
+  padding: 0;
+  /* font-size: 0; */
+  font-family: 'avant-garde', Helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  max-width: 375px;
+  background: #fff;
+  margin: 0 auto;
+
+}
