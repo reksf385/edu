@@ -12,10 +12,13 @@
 
 * { box-sizing: border-box; vertical-align: top; }
 
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
 body {
   margin: 0;
   padding: 0;
-  /* font-size: 0; */
+  font-size: 16px;
+  line-height: 1.4em;
   font-family: 'avant-garde', Helvetica, arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -24,5 +27,89 @@ body {
   max-width: 375px;
   background: #fff;
   margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  position: relative;
+}
 
+.with-gutters {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.artwork {
+  width: 100%;
+  height: 70vh;
+  background: url('../img/artwork.jpg') no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+.global-back {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+}
+
+.metadata {
+  font-family: 'Adobe Garamond Pro', Times, serif;
+  margin-top: 20px;
+}
+
+.metadata h2 { font-size: 20px; }
+
+.caption {
+  color: #666;
+  font-size: 14px;
+  margin: 10px 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.pricing {
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  padding: 0 0 100px 0;
+}
+
+.big-button {
+  width: 100%;
+  height: 50px;
+  border: 2px solid transparent;
+  position: relative;
+  background: #000;
+  color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'avant-garde';
+  letter-spacing: 1px;
+  padding: 12px 20px 0 20px;
+}
+
+.big-button.ghost {
+  border-color: #e5e5e5;
+  background: transparent;
+  color: #000;
+}
+
+.big-button.transparent {
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+  display: inline-block;
+  width: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.open-ar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
