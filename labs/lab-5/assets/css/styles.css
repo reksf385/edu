@@ -19,6 +19,7 @@ body {
   position: absolute;
   top: 25px;
   right: 25px;
+  cursor: pointer;
 }
 
 .cart {
@@ -28,13 +29,18 @@ body {
   background: #000;
   color: #fff;
   width: 675px;
-  padding: 40px;
+  padding: 25px 40px 40px 40px;
+}
+
+.cart.hide {
+  display: none;
 }
 
 .close-button {
   text-align: right;
   border-bottom: 1px solid #fff;
   padding-bottom: 25px;
+  cursor: pointer;
 }
 
 .line-item {

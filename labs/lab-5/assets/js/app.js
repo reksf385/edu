@@ -10,3 +10,7 @@ $('.item').click(function() {
   }
   
 });
+
+$('.cart-toggle').click(function() {
+  $('.cart').toggleClass('hide');
+});
