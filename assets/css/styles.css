@@ -71,6 +71,8 @@ p {
   padding: 0; 
 }
 
+.hide { display: none; }
+
 @media only screen and (max-width: 1020px) {
   .header, .wrapper {
     width: calc(100% - 4em);
