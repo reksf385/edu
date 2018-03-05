@@ -41,7 +41,6 @@ body {
   height: 70vh;
   background: url('../img/artwork.jpg') no-repeat center center;
   background-size: cover;
-  overflow: hidden;
   position: relative;
 }
 
@@ -57,12 +56,22 @@ body {
   margin-top: 20px;
 }
 
-.metadata h2 { font-size: 20px; }
+.metadata h2 { 
+  font-size: 14px; 
+  font-family: 'avant-garde', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metadata .secondary-buttons { 
+  text-align: center; 
+  margin-bottom: 20px;
+}
 
 .caption {
   color: #666;
   font-size: 14px;
-  margin: 10px 0 20px 0;
+  margin: 3px 0 20px 0;
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -73,6 +82,39 @@ body {
 
 .action-buttons {
   padding: 0 0 100px 0;
+}
+
+.flag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-size: 17px;
+  font-family: 'Adobe Garamond Pro', Times, serif;
+  padding: 15px 20px 13px 20px;
+}
+
+.flag:before {
+  position: absolute;
+  bottom: -12px;
+  left: 22.5%;
+  content: '';
+  background: url('../img/flag-source.svg');
+  width: 18px;
+  height: 12px;
+}
+
+.flag:after {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  content: '';
+  background: url('../img/close.svg');
+  width: 12px;
+  height: 12px;
 }
 
 .big-button {
