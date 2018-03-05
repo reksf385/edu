@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="206px" height="22px" viewBox="0 0 206 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="6" width="20" height="14"></rect>
+    </defs>
+    <g id="Round-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="First-run---1" transform="translate(-85.000000, -628.000000)">
+            <g id="Group-2" transform="translate(85.000000, 628.000000)">
+                <g id="Group" transform="translate(95.000000, 2.000000)" fill="#000000">
+                    <g id="Fav">
+                        <path d="M9.635,17.31 L1.353,8.877 C0.465,7.86 0,6.617 0,5.331 C0,2.391 2.392,0 5.332,0 C6.754,0 8.092,0.554 9.099,1.559 L9.625,2.09 L10.179,1.55 C11.175,0.554 12.513,0 13.938,0 C16.877,0 19.269,2.391 19.269,5.331 C19.269,6.617 18.803,7.86 17.958,8.831 L9.635,17.31 L9.635,17.31 Z M5.332,2.053 C3.524,2.053 2.053,3.524 2.053,5.331 C2.053,6.121 2.339,6.886 2.859,7.484 L9.635,14.38 L16.451,7.439 C16.929,6.886 17.216,6.121 17.216,5.331 C17.216,3.524 15.745,2.053 13.938,2.053 C13.062,2.053 12.239,2.394 11.622,3.011 L9.598,4.983 L7.644,3.008 C7.029,2.394 6.207,2.053 5.332,2.053 L5.332,2.053 Z" id="Imported-Layers"></path>
+                    </g>
+                </g>
+                <g id="Share" transform="translate(190.000000, 0.000000)" fill="#000000">
+                    <polyline id="Fill-1" points="16 22 0 22 0 8 5 8 5 10 2 10 2 20 14 20 14 10 11 10 11 8 16 8 16 22"></polyline>
+                    <polygon id="Fill-2" points="8.342 0.315 2.811 5.85 3.702 6.973 7 3.5 7 15 9 15 9 3.437 12.64 6.91 13.873 5.85"></polygon>
+                </g>
+                <g id="Group-4" transform="translate(0.000000, 1.000000)">
+                    <rect id="Rectangle-18" stroke="#000000" stroke-width="2" transform="translate(10.000000, 8.000000) rotate(-315.000000) translate(-10.000000, -8.000000) " x="6" y="4" width="8" height="8"></rect>
+                    <g id="Rectangle-17">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#000000" stroke-width="2" x="1" y="7" width="18" height="12"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
