@@ -1,0 +1,165 @@
+@import url("http://fast.fonts.com/t/1.css?apiType=css&projectid=f7f47a40-b25b-44ee-9f9c-cfdfc8bb2741");
+@font-face{
+  font-family:"avant-garde";
+  src:url("../../../../../assets/fonts/b74e5f86-4477-435a-abdf-32d8215f21bc.eot?iefix") format("eot");}
+@font-face{
+  font-family:"avant-garde";
+  src:url("../../../../../assets/fonts/b74e5f86-4477-435a-abdf-32d8215f21bc.eot?iefix");
+  src:url("../../../../../assets/fonts/c18aee57-7585-4a8b-9a1c-69d226301d73.woff") format("woff"),
+      url("../../../../../assets/fonts/44ccbb2b-0fbc-4d95-b1da-0aa73bd26fb0.ttf") format("truetype"),
+      url("../../../../../assets/fonts/f2de529c-11d2-43b7-be7c-05c5aaeaf133.svg#f2de529c-11d2-43b7-be7c-05c5aaeaf133") format("svg");
+}
+
+* { box-sizing: border-box; vertical-align: top; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.4em;
+  font-family: 'avant-garde', Helvetica, arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  max-width: 375px;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  position: relative;
+}
+
+.with-gutters {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.artwork {
+  width: 100%;
+  height: 70vh;
+  background: url('../img/artwork.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+.global-back {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  left: 10px;
+}
+
+.metadata {
+  font-family: 'Adobe Garamond Pro', Times, serif;
+  margin-top: 20px;
+}
+
+.metadata h2 { 
+  font-size: 14px; 
+  font-family: 'avant-garde', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.metadata .secondary-buttons { 
+  text-align: center; 
+  margin-bottom: 20px;
+}
+
+.caption {
+  color: #666;
+  font-size: 14px;
+  margin: 3px 0 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.pricing {
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  padding: 0 0 100px 0;
+}
+
+.flag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-size: 17px;
+  font-family: 'Adobe Garamond Pro', Times, serif;
+  padding: 15px 20px 13px 20px;
+  opacity: 1;
+  transition: all 300ms ease;
+}
+
+.flag.hide {
+  bottom: -15px;
+  opacity: 0;
+}
+
+.flag:before {
+  position: absolute;
+  bottom: -12px;
+  left: 22.5%;
+  content: '';
+  background: url('../img/flag-source.svg');
+  width: 18px;
+  height: 12px;
+}
+
+.flag:after {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  content: '';
+  background: url('../img/close.svg');
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+}
+
+.big-button {
+  width: 100%;
+  height: 50px;
+  border: 2px solid transparent;
+  position: relative;
+  background: #000;
+  color: #fff;
+  margin-bottom: 10px;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: 'avant-garde';
+  letter-spacing: 1px;
+  padding: 12px 20px 0 20px;
+}
+
+.big-button.ghost {
+  border-color: #e5e5e5;
+  background: transparent;
+  color: #000;
+}
+
+.big-button.transparent {
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+  display: inline-block;
+  width: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+}
+
+.open-ar {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}

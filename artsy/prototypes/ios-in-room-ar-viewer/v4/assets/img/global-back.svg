@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>back button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard-2-Copy-20" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-8.000000, -55.000000)">
+        <g id="back-button" transform="translate(9.000000, 56.000000)">
+            <path d="M37.597,18.934 C37.597,29.2895 29.202,37.684 18.847,37.684 C8.492,37.684 0.097,29.2895 0.097,18.934 C0.097,8.5785 8.492,0.184 18.847,0.184 C29.202,0.184 37.597,8.5785 37.597,18.934 L37.597,18.934 Z" id="Fill-1" fill="#000000" fill-rule="evenodd"></path>
+            <path d="M37.597,18.934 C37.597,29.2895 29.202,37.684 18.847,37.684 C8.492,37.684 0.097,29.2895 0.097,18.934 C0.097,8.5785 8.492,0.184 18.847,0.184 C29.202,0.184 37.597,8.5785 37.597,18.934 L37.597,18.934 Z" id="Stroke-2" stroke="#FFFFFF" stroke-width="1"></path>
+            <polygon id="Fill-3" fill="#FFFFFF" fill-rule="evenodd" points="11.5 18 28.5 18 28.5 20.5 11.5 20.5"></polygon>
+            <polyline id="Fill-4" fill="#FFFFFF" fill-rule="evenodd" points="17.9395 27.9315 8.692 18.6845 17.9395 9.4365 19.707 11.204 12.227 18.6845 19.707 26.164 17.9395 27.9315"></polyline>
+        </g>
+    </g>
+</svg>
