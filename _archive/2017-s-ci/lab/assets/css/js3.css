@@ -1,8 +1,0 @@
-.fruit {
-  height: 100px;
-  width: 100px;
-  background-size: cover;
-}
-.banana { background-image: url('../img/banana.jpg'); }
-.apple { background-image: url('../img/apple.jpg'); }
-.grapes { background-image: url('../img/grapes.jpg'); }
