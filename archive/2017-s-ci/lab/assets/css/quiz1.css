@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.composition {
+  width: 768px;
+  height: 768px;
+  background: #f8e71c;
+}
