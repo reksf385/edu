@@ -1,4 +1,4 @@
-### Typography & Interaction 2
+### Creative Computing
 
 ---
 
@@ -41,7 +41,7 @@ git clone <YOUR REPO PATH>
 #### Clone the class starter package
 ```
 cd ~
-git clone git@github.com:briansw/ci-starter-package.git
+git clone git@github.com:briansw/edu-starter-pack.git
 ```
 Move the cloned files and folders into your repository
 
